@@ -1,0 +1,27 @@
+{
+  "name": "grouper",
+  "version": "0.0.0",
+  "private": true,
+
+  "dependencies": {
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "express": "~4.14.1",
+    "hbs": "~4.0.1",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.2"
+  },
+  "description": "",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blivi0/Grouper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blivi0/Grouper/issues"
+  },
+  "homepage": "https://github.com/blivi0/Grouper#readme"
+}
