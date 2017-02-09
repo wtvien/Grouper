@@ -7,6 +7,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
+var editProfile = require('./routes/edit-profile');
+var selectClass = require('./routes/select-class');
+var fooclass = require('./routes/class');
+var peer = require('./routes/peer');
+
+
 
 var app = express();
 
@@ -22,6 +28,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', index.view);
+app.get('/edit-profile', editProfile.view);
+app.get('/select-class', selectClass.view);
+app.get('/class', fooclass.view);
+app.get('/peer', peer.view);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
