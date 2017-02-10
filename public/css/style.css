@@ -2,19 +2,14 @@ body {
   padding: 50px;
 }
 
-.course-box {
-  border: 2px solid black;
-  height: 200px;
-}
-
-/* Bootstrap dashboard */
+/* Home */
 .navbar-fixed-top {
   border: 0;
 }
-.main {
+.home {
   padding: 20px;
 }
-.main .page-header {
+.home .page-header {
   margin-top: 0;
   text-align: center;
 }
@@ -27,4 +22,13 @@ body {
 }
 .placeholder {
   margin-bottom: 20px;
+}
+.course-box {
+  border: 2px solid black;
+  height: 200px;
+}
+
+/* Profile */
+.profile {
+  padding: 20px;
 }
