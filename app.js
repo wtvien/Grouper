@@ -7,12 +7,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var editProfile = require('./routes/edit-profile');
-var selectClass = require('./routes/select-class');
-var fooclass = require('./routes/class');
+var myProfile = require('./routes/my-profile');
+var course = require('./routes/course');
 var peer = require('./routes/peer');
-
-
 
 var app = express();
 
@@ -28,10 +25,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', index.view);
-app.get('/edit-profile', editProfile.view);
-app.get('/select-class', selectClass.view);
-app.get('/class', fooclass.view);
-app.get('/peer', peer.view);
+app.get('/my-profile', myProfile.view);
+app.get('/course/:courseId', course.view);
+app.get('/course/:courseId/peer/:peerId', peer.view);
 
 
 http.createServer(app).listen(app.get('port'), function(){

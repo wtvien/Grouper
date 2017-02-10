@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<body>
+  <a href="/">Home</a>
+
+  <h1>{{title}}</h1>
+  <p>Welcome to {{title}}</p>
+
+  <p>
+    {{#each peers}}
+    <h3><a href={{peerUrl}}>Student {{peerId}}</a></h3><br>
+    {{/each}}
+  </p>
+</body>
