@@ -15,6 +15,12 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="/">Grouper</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -26,27 +32,32 @@
     </nav>
 
     <div class="profile">
-      <div class="row">
-        <div class="col-sm-4">
-          <input class="img-responsive" type="image" src="http://lorempixel.com/400/400/people">
-          <input type="file" style="display: none">
+      <form>
+        <div class="row">
+          <div class="col-sm-4">
+            <input class="img-responsive" type="image" src="http://lorempixel.com/400/400/people">
+            <input type="file" style="display: none">
+          </div>
+          <div class="col-sm-8">
+            <h1 class="page-header">David Lee</h1>
+            <div class="form-group">
+              <label for="inputMajor">Major</label>
+              <input id="inputMajor" class="form-control" type="text" placeholder="Major">
+            </div>
+            <div class="form-group">
+              <label for="inputYear">Year</label>
+              <input id="inputYear" class="form-control" type="text" placeholder="Year">
+            </div>
+            <div class="form-group">
+              <label for="inputLocation">Location</label>
+              <input id="inputLocation" class="form-control" type="text" placeholder="Location">
+            </div>
+          </div>
         </div>
-        <div class="col-sm-8">
-          <h1 class="page-header">David Lee</h1>
-          <div class="form-group">
-            <label for="inputMajor">Major</label>
-            <input id="inputMajor" class="form-control" type="text" placeholder="Major">
-          </div>
-          <div class="form-group">
-            <label for="inputMajor">Year</label>
-            <input id="inputMajor" class="form-control" type="text" placeholder="Year">
-          </div>
-          <div class="form-group">
-            <label for="inputMajor">Location</label>
-            <input id="inputMajor" class="form-control" type="text" placeholder="Location">
-          </div>
+        <div class="row">
+
         </div>
-      </div>
+      </form>
     </div>
   </div>
 
