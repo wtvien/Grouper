@@ -27,6 +27,15 @@ body {
   height: 200px;
 }
 
+.input[type=text] {
+    width: 50%;
+}
+
+/* change input width to 100% */
+input[type=text]:focus {
+    width: 100%;
+}
+
 /* Profile */
 .profile .row {
   margin-top: 20px;
