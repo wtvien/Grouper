@@ -28,6 +28,6 @@ body {
 }
 
 /* Profile */
-.profile {
-  padding: 20px;
+.profile .row {
+  margin-top: 20px;
 }
