@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var myProfile = require('./routes/my-profile');
 var course = require('./routes/course');
 var peer = require('./routes/peer');
+var skeleton = require('./routes/skeleton');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.get('/', index.view);
 app.get('/my-profile', myProfile.view);
 app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);
+app.get('/skeleton', skeleton.view);
 
 
 http.createServer(app).listen(app.get('port'), function(){
