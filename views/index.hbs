@@ -7,20 +7,48 @@
 	<meta name="viewport" content="width=device-width", inital-scale="1.0">
 
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="container">
-    <a href="/">Home</a>
 
-    <h1>{{title}}</h1>
-    <p>Welcome to {{title}}</p>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Grouper</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/my-profile">My Profile</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <a href="/my-profile">My Profile</a>
-    <br>
-    <a href="/course/A">Class A</a>
-    <a href="/course/B">Class B</a>
-    <a href="/course/C">Class C</a>
+		<div class="main">
+	    <h1 class="page-header">Hello, David</h1>
+	    <div class="row placeholders">
+	      <div class="col-xs-6 col-sm-4 placeholder">
+					<div class="center-block course-box">
+						<a href="/course/A"><h3>Course A</h3></a>
+		        <span class="text-muted">Course Title</span>
+					</div>
+	      </div>
+	      <div class="col-xs-6 col-sm-4 placeholder">
+					<div class="center-block course-box">
+						<a href="/course/B"><h3>Course B</h3></a>
+		        <span class="text-muted">Course Title</span>
+					</div>
+	      </div>
+	      <div class="col-xs-6 col-sm-4 placeholder">
+					<div class="center-block course-box">
+						<a href="/course/C"><h3>Course C</h3></a>
+		        <span class="text-muted">Course Title</span>
+					</div>
+	      </div>
+	    </div>
+		</div>
   </div>
 
   <script src="/js/jquery-3.1.1.min.js"></script>
