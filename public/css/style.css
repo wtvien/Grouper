@@ -23,8 +23,7 @@ body {
 .placeholder {
   margin-bottom: 20px;
 }
-.course-box {
-  border: 2px solid black;
+.course-panel {
   height: 200px;
 }
 
