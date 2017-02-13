@@ -1,5 +1,9 @@
+var data = require('../data.json');
+var _ = require('lodash');
+
 exports.view = function(req, res) {
   var courseId = req.params.courseId;
+  var course = _.find(data.courses, {'id': courseId});
   res.render('course', {
     title: courseId,
     peers : [

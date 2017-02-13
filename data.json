@@ -1,10 +1,30 @@
 {
   "students": [
-    { "name": "David Lee", "enrolled": ["CSE 170", "CSE 110", "CSE 141L"], "profile": {} }
+    {
+      "name": "David Lee",
+      "courses": ["CSE 170", "CSE 110", "CSE 141L"],
+      "profile": {
+        "major": "Computer Science",
+        "year": "4th",
+        "location": "Off-campus"
+      }
+    }
   ],
   "courses": [
-    { "id": "CSE 170", "title": "Interaction Design" },
-    { "id": "CSE 110", "title": "Software Engineering" },
-    { "id": "CSE 141L", "title": "Project in Computer Architecture" }
+    {
+      "id": "CSE 170",
+      "title": "Interaction Design",
+      "students": ["David Lee"]
+    },
+    {
+      "id": "CSE 110",
+      "title": "Software Engineering",
+      "students": ["David Lee"]
+    },
+    {
+      "id": "CSE 141L",
+      "title": "Project in Computer Architecture",
+      "students": ["David Lee"]
+    }
   ]
 }
