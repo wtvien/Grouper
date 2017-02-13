@@ -3,9 +3,12 @@ exports.view = function(req, res) {
   res.render('course', {
     title: 'Course ' + courseId,
     peers : [
-      { peerId: 'A', peerUrl: '/course/' + courseId + '/peer/A' },
-      { peerId: 'B', peerUrl: '/course/' + courseId + '/peer/B' },
-      { peerId: 'C', peerUrl: '/course/' + courseId + '/peer/C' }
+      { peerId: 'A', description: 'description A', 
+      		peerUrl: '/course/' + courseId + '/peer/A' },
+      { peerId: 'B', description: 'description B', 
+      		peerUrl: '/course/' + courseId + '/peer/B' },
+      { peerId: 'C', description: 'description C', 
+      		peerUrl: '/course/' + courseId + '/peer/C' }
     ]
    });
 };

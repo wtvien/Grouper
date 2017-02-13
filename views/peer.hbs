@@ -8,15 +8,83 @@
 
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <a href="/">Home</a>
 
-  <h1>Student Name</h1>
-  <p>Email <a href="mailto:wtvien@ucsd.edu">Student Name</a>!</p>
+  <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Grouper <span class="glyphicon glyphicon-home"></span></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/my-profile">My Profile</a></li>
+            <li><a href="/settings">Settings</a></li>
+            <li><a href="/">Sign Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-  <a href={{courseUrl}}>Back</a>
+    <div class="peer">
+      <form id="profileForm" class="form-horizontal">
+
+      <div class="row">
+        <div class="col-sm-4">
+          <img src="http://lorempixel.com/400/400/people" class="img-responsive">
+        </div>
+
+        <div class="col-sm-8">
+          <h1 class="page-header">Student Name</h1>
+
+          <div class="row-info">
+            <label for="inputMajor" class="control-label">Major</label> Computer Science
+          </div>
+
+          <div class="row-info">
+            <label for="inputYear" class="control-label">Year</label> 4th
+          </div>
+
+          <div class="row-info">
+            <label for="inputLocation" class="control-label">Location</label> On-campus
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-times">
+            {{#each daysOfWeek}}
+            <div class="form-group">
+              <label for={{from}}>{{day}}</label> 5:00 pm
+              <label for={{to}}> to</label> 9:00 pm
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="col-sm-8">
+            <div class="row"><label for="inputBio">Personal Bio</label><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas justo lectus, vitae vehicula sapien sagittis in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi ultricies posuere ligula, non suscipit tortor commodo scelerisque. Aliquam non est quis augue molestie aliquet. Nullam nec libero ac erat pulvinar dapibus in in massa. Cras eget mi mollis, luctus justo ut, lacinia lorem. Curabitur molestie mauris quis dolor dictum semper. Integer at nisl volutpat lorem lobortis rhoncus. Fusce accumsan dolor molestie velit commodo vestibulum. Fusce tortor enim, fermentum id sapien in, facilisis auctor ex. Proin rutrum vulputate augue, ut fermentum ex lobortis a. Aliquam viverra nisi at pretium placerat. Vivamus aliquet dui libero, sit amet interdum arcu interdum ac. Aenean ac mollis lectus. Curabitur faucibus non dolor vitae sodales. Aliquam vulputate rhoncus aliquet.</div>
+
+            <div class="row"><label for="inputRoles">Team Roles</label><br>
+            Vestibulum varius rutrum mauris, eu fringilla lorem euismod et. Aenean eget magna eget mi convallis tincidunt sed in mi. Nulla non elit commodo ante ultricies cursus. Nulla facilisi. Nunc rhoncus fermentum urna in maximus. Cras gravida tincidunt magna, sed fermentum nulla dictum id. Nullam nec enim nisl. Phasellus massa ante, dictum nec hendrerit quis, vehicula in nibh. </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <center><a href="mailto:wtvien@ucsd.edu" class="btn btn-default" role="button">Email Student Name</a></center>
+      <br><a href={{courseUrl}}>Back</a>
+    </div>
+    </form>
+  </div>
 
   <script src="/js/jquery-3.1.1.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
