@@ -12,7 +12,7 @@ exports.view = function(req, res) {
     let student = _.find(data.students, {'name' : studentName});
     let peer = { peerName : student.name,
       description : '',
-      peerUrl : '/course/' + courseId + '/peer/' + student.name
+      peerUrl : encodeURI('/course/' + courseId + '/peer/' + student.name)
     };
     peers.push(peer);
   }
