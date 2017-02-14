@@ -8,7 +8,7 @@ exports.view = function(req, res) {
   // Load data for each enrolled course
   var courses = [];
   for (let courseId of user.courses) {
-    let course = _.find(data.courses, {'id': courseId});
+    let course = _.find(data.courses, {'id' : courseId});
     course.url = encodeURI('/course/' + courseId);
     courses.push(course);
   }
