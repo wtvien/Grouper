@@ -1,30 +1,43 @@
 {
-  "students": [
+  "students" : [
     {
-      "name": "David Lee",
-      "courses": ["CSE 170", "CSE 110", "CSE 141L"],
-      "profile": {
-        "major": "Computer Science",
-        "year": "4th",
+      "name" : "David Lee",
+      "courses" : ["CSE 170", "CSE 110", "CSE 141L"],
+      "profile" : {
+        "major" : "Computer Science",
+        "year" : "4th",
         "location": "Off-campus"
       }
+    },
+    {
+      "name" : "Whitney Vien",
+      "courses" : ["CSE 170"],
+      "profile" : {}
+    },
+    {
+      "name" : "David Amadeo",
+      "courses" : ["CSE 170"],
+      "profile" : {}
     }
   ],
-  "courses": [
+  "courses" : [
     {
-      "id": "CSE 170",
-      "title": "Interaction Design",
-      "students": ["David Lee"]
+      "id" : "CSE 170",
+      "title" : "Interaction Design",
+      "groupSize" : 2,
+      "students" : ["David Lee", "Whitney Vien", "David Amadeo"]
     },
     {
-      "id": "CSE 110",
-      "title": "Software Engineering",
-      "students": ["David Lee"]
+      "id" : "CSE 110",
+      "title" : "Software Engineering",
+      "groupSize" : 2,
+      "students" : ["David Lee"]
     },
     {
-      "id": "CSE 141L",
-      "title": "Project in Computer Architecture",
-      "students": ["David Lee"]
+      "id" : "CSE 141L",
+      "title" : "Project in Computer Architecture",
+      "groupSize" : 2,
+      "students" : ["David Lee"]
     }
   ]
 }
