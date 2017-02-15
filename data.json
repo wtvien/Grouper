@@ -3,28 +3,71 @@
     {
       "id" : "123",
       "name" : "David Lee",
-      "courses" : ["CSE 170", "CSE 110", "CSE 141L"],
-      "profile" : {
-        "major" : "Computer Science",
-        "year" : "4th",
-        "location": "Off-campus"
+      "email" : "dal039@ucsd.edu",
+      "courses" : [
+        { "id" : "CSE 170", "group" : [] },
+        { "id" : "CSE 110", "group" : [] },
+        { "id" : "CSE 141L", "group" : [] }
+      ],
+      "major" : "Computer Science",
+      "year" : "4th",
+      "location": "Off-campus",
+      "availability" : {
+        "Mon" : ["3:00 PM", "6:00 PM"],
+        "Tues" : ["2:00 PM", "8:00 PM"],
+        "Wed" : ["3:00 PM", "6:00 PM"],
+        "Thurs" : ["2:00 PM", "8:00 PM"],
+        "Fri" : ["3:00 PM", "6:00 PM"],
+        "Sat" : [],
+        "Sun" : []
       },
-      "groups" : { "CSE 170" : [] }
+      "bio" : "",
+      "roles" : ""
     },
     {
       "id" : "456",
       "name" : "Whitney Vien",
-      "courses" : ["CSE 170"],
-      "profile" : {},
-      "groups" : { "CSE 170" : [] }
+      "email" : "wtvien@ucsd.edu",
+      "courses" : [
+        { "id" : "CSE 170", "group" : [] }
+      ],
+      "major" : "Physiology & Neuroscience",
+      "year" : "4th",
+      "location" : "Off-campus",
+      "availability" : {
+        "Mon" : ["3:00 PM", "6:00 PM"],
+        "Tues" : ["2:00 PM", "8:00 PM"],
+        "Wed" : ["3:00 PM", "6:00 PM"],
+        "Thurs" : ["2:00 PM", "8:00 PM"],
+        "Fri" : ["3:00 PM", "6:00 PM"],
+        "Sat" : [],
+        "Sun" : []
+      },
+      "bio" : "",
+      "roles" : ""
     },
     {
       "id" : "789",
       "name" : "David Amadeo",
-      "courses" : ["CSE 170"],
-      "profile" : {},
-      "groups" : { "CSE 170" : [] }
-    }
+      "email" : "damadeo@ucsd.edu",
+      "courses" : [
+        { "id" : "CSE 170", "group" : [] }
+      ],
+      "major" : "Computer Science",
+      "year" : "2nd",
+      "location" : "On-campus",
+      "availability" : {
+        "Mon" : ["3:00 PM", "6:00 PM"],
+        "Tues" : ["2:00 PM", "8:00 PM"],
+        "Wed" : ["3:00 PM", "6:00 PM"],
+        "Thurs" : ["2:00 PM", "8:00 PM"],
+        "Fri" : ["3:00 PM", "6:00 PM"],
+        "Sat" : [],
+        "Sun" : []
+      },
+      "bio" : "",
+      "roles" : ""
+      }
   ],
   "courses" : [
     {
