@@ -11,6 +11,7 @@ var myProfile = require('./routes/my-profile');
 var course = require('./routes/course');
 var peer = require('./routes/peer');
 var skeleton = require('./routes/skeleton');
+var signin = require('./routes/signin');
 
 var app = express();
 
@@ -30,7 +31,7 @@ app.get('/my-profile', myProfile.view);
 app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);
 app.get('/skeleton', skeleton.view);
-
+app.get('/signin', signin.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
