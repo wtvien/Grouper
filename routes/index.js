@@ -1,5 +1,4 @@
 var data = require('../data.json');
-var _ = require('lodash');
 
 /* GET home page. */
 exports.view = function(req, res) {
@@ -8,7 +7,7 @@ exports.view = function(req, res) {
   // Load data for each enrolled course
   var courses = [];
   for (let courseId of user.courses) {
-    let course = _.find(data.courses, {'id' : courseId});
+    let course = data.courses.find(function(c) { return c.id === courseId });
     course.url = encodeURI('/course/' + courseId);
     courses.push(course);
   }
