@@ -1,17 +1,25 @@
+var data = require('../data.json');
+
 exports.view = function(req, res) {
-  var daysOfWeek = [
-    { day : "Mon", from : "inputMonFrom", to : "inputMonTo" },
-    { day : "Tues", from : "inputTuesFrom", to : "inputTuesTo" },
-    { day : "Wed", from : "inputWedFrom", to : "inputWedTo" },
-    { day : "Thurs", from : "inputThursFrom", to : "inputThursTo" },
-    { day : "Fri", from : "inputFriFrom", to : "inputFriTo" },
-    { day : "Sat", from : "inputSatFrom", to : "inputSatTo" },
-    { day : "Sun", from : "inputSunFrom", to : "inputSunTo" }
-  ];
+  var peerId = req.params.peerId;
+  var peer = data.students.find(function(s) { return s.id === peerId});
+
+  var days = [];
+  for (let day in peer.availability) {
+    if (peer.availability[day].length > 0)
+      days.push({ day : day, from : peer.availability[day][0], to : peer.availability[day][1] });
+  }
 
   res.render('peer', {
-    title : 'Student ' + req.params.peerId,
-    courseUrl : '/course/' + req.params.courseId,
-    daysOfWeek : daysOfWeek
+    title : peer.name,
+    name : peer.name,
+    major : peer.major,
+    year : peer.year,
+    location : peer.location,
+    days : days,
+    bio : peer.bio,
+    roles : peer.roles,
+    mailto : 'mailto:' + peer.email,
+    courseUrl : encodeURI('/course/' + req.params.courseId)
   });
 };

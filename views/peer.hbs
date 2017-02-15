@@ -44,43 +44,45 @@
         </div>
 
         <div class="col-sm-8">
-          <h1 class="page-header">Student Name</h1>
+          <h1 class="page-header">{{name}}</h1>
 
           <div class="row-info">
-            <label for="inputMajor" class="control-label">Major</label> Computer Science
+            <label for="inputMajor" class="control-label">Major</label> {{major}}
           </div>
 
           <div class="row-info">
-            <label for="inputYear" class="control-label">Year</label> 4th
+            <label for="inputYear" class="control-label">Year</label> {{year}}
           </div>
 
           <div class="row-info">
-            <label for="inputLocation" class="control-label">Location</label> On-campus
+            <label for="inputLocation" class="control-label">Location</label> {{location}}
           </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-times">
-            {{#each daysOfWeek}}
+            {{#each days}}
             <div class="form-group">
-              <label for={{from}}>{{day}}</label> 5:00 pm
-              <label for={{to}}> to</label> 9:00 pm
+              <label>{{day}}</label> {{from}}
+              <label> to</label> {{to}}
             </div>
             {{/each}}
         </div>
 
         <div class="col-sm-8">
             <div class="row"><label for="inputBio">Personal Bio</label><br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas justo lectus, vitae vehicula sapien sagittis in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi ultricies posuere ligula, non suscipit tortor commodo scelerisque. Aliquam non est quis augue molestie aliquet. Nullam nec libero ac erat pulvinar dapibus in in massa. Cras eget mi mollis, luctus justo ut, lacinia lorem. Curabitur molestie mauris quis dolor dictum semper. Integer at nisl volutpat lorem lobortis rhoncus. Fusce accumsan dolor molestie velit commodo vestibulum. Fusce tortor enim, fermentum id sapien in, facilisis auctor ex. Proin rutrum vulputate augue, ut fermentum ex lobortis a. Aliquam viverra nisi at pretium placerat. Vivamus aliquet dui libero, sit amet interdum arcu interdum ac. Aenean ac mollis lectus. Curabitur faucibus non dolor vitae sodales. Aliquam vulputate rhoncus aliquet.</div>
+							{{bio}}
+						</div>
 
             <div class="row"><label for="inputRoles">Team Roles</label><br>
-            Vestibulum varius rutrum mauris, eu fringilla lorem euismod et. Aenean eget magna eget mi convallis tincidunt sed in mi. Nulla non elit commodo ante ultricies cursus. Nulla facilisi. Nunc rhoncus fermentum urna in maximus. Cras gravida tincidunt magna, sed fermentum nulla dictum id. Nullam nec enim nisl. Phasellus massa ante, dictum nec hendrerit quis, vehicula in nibh. </div>
+							{{roles}}
+						</div>
         </div>
     </div>
 
     <div class="row">
-      <center><a href="mailto:wtvien@ucsd.edu" class="btn btn-default" role="button">Email Student Name</a></center>
+      <center><a href="{{mailto}}" class="btn btn-default" role="button">Email {{name}}</a></center>
       <br><a href={{courseUrl}}>Back</a>
     </div>
     </form>

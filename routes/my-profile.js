@@ -17,6 +17,7 @@ exports.view = function(req, res) {
   for (let day in user.availability) {
     days.push({ day : day, from : user.availability[day][0], to : user.availability[day][1] });
   }
+  
   res.render('my-profile', {
     title : 'My Profile',
     name : user.name,
