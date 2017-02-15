@@ -12,6 +12,7 @@ var course = require('./routes/course');
 var peer = require('./routes/peer');
 var skeleton = require('./routes/skeleton');
 var signin = require('./routes/signin');
+var add = require('./routes/addCourse');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);
 app.get('/skeleton', skeleton.view);
 app.get('/signin', signin.view);
+app.get('/addCourse', add.addCourse);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

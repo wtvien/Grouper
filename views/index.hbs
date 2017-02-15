@@ -35,43 +35,61 @@
       </div>
     </nav>
 
-		<div class="home">
+	<div class="home">
 	    <h1 class="page-header">Hello, David</h1>
 
 	    <div class="row placeholders">
-	    	<center>Search for a course or pick one from below.<br>
-	    		<input type="text" name="search" placeholder="e.g. Course A"><br>
-				</center>
-			</div>
-
-			<div class="row placeholders">
-				<form action="">
-					<div align="left"><select name="subjects">
-	    				<option value="BIOL">BIOL</option>
-	    				<option value="COGS">COGS</option>
-	    				<option value="CSE">CSE</option>
-	    				<option value="ECE">ECE</option>
-	 				</select></div>
-
-					<div align="right"> <input type="checkbox">LD <input type="checkbox">UD <input type="checkbox">GD </div>
-				</form>
-			</div>
+	    	<center>Pick a course from below to view peers.</center>
+	    </div>
 
 	    <div class="row placeholders">
 				{{#each courses}}
 	      <div class="col-xs-12 col-sm-6 col-md-4 placeholder">
-					<div class="center-block panel panel-default course-panel">
-						<div class="panel-heading">
-							<a href={{url}}><h3 class="panel-title">{{id}}</h3></a>
-						</div>
-						<div class="panel-body">
-		        	<span class="text-muted">{{title}}</span>
-						</div>
-					</div>
+		    <div class="center-block panel panel-default course-panel">
+			  <div class="panel-heading">
+			    <a href={{url}}><h3 class="panel-title">{{id}}</h3></a>
+			  </div>
+
+				<div class="panel-body">
+		          <p><span class="text-muted">{{title}}</span></p>
+		   
+		          <button type="button" class ="btn btn-default" data-toggle="modal" data-target="#myModal">Remove course</button>
+
+		          <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div> 
+
+                        <div class="modal-body">
+                          Are you sure you want to remove <b>{{title}}</b> from your list of courses?                   
+                        </div>
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default"><a href="/">Yes</a></button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">No</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+			  </div>
+		    </div>
 	      </div>
 				{{/each}}
 	    </div>
-		</div>
+
+	    <div class="row placeholders">
+	      <h4>Add a course</h4>
+	      <p>Enter your course code provided by your professor.<p>
+	      <form id="addCourseForm" role="form" method="get" action="/addCourse">
+	      	<input type="text" placeholder="12345" name="addCourse">
+	      	<input type="submit" value="Submit">
+	      </form>
+	    </div>
+
+	</div>
   </div>
 
   <script src="/js/jquery-3.1.1.min.js"></script>
