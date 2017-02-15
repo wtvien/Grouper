@@ -42,11 +42,11 @@
             <input type="file" style="display: none">
           </div>
           <div class="col-sm-8">
-            <h1 class="page-header">David Lee</h1>
+            <h1 class="page-header">{{name}}</h1>
             <div class="form-group">
               <label for="inputMajor" class="col-sm-2 control-label">Major</label>
               <div class="col-sm-10">
-                <input id="inputMajor" class="form-control" type="text" placeholder="Major">
+                <input id="inputMajor" class="form-control" type="text" placeholder="Major" value="{{major}}">
               </div>
             </div>
             <div class="form-group">
@@ -56,7 +56,7 @@
 									{{#each years}}
 										{{#if selected}}
 	                  	<option selected="selected">{{year}}</option>
-										{{#else}}
+										{{else}}
 											<option>{{year}}</option>
 										{{/if}}
 									{{/each}}
@@ -67,8 +67,13 @@
               <label for="inputLocation" class="col-sm-2 control-label">Location</label>
               <div class="col-sm-10">
                 <select id="inputYear" class="form-control">
-                  <option>On-campus</option>
-                  <option>Off-campus</option>
+									{{#each locations}}
+										{{#if selected}}
+	                  	<option selected="selected">{{loc}}</option>
+										{{else}}
+											<option>{{loc}}</option>
+										{{/if}}
+									{{/each}}
                 </select>
               </div>
             </div>
@@ -76,15 +81,15 @@
         </div>
         <div class="row">
           <div class="col-sm-4">
-            {{#each daysOfWeek}}
+            {{#each days}}
             <div class="form-group">
-              <label for={{from}} class="col-sm-2 control-label">{{day}}</label>
+              <label class="col-sm-2 control-label">{{day}}</label>
               <div class="col-sm-4">
-                <input id={{from}} class="form-control" type="text">
+                <input class="form-control" type="text" value="{{to}}">
               </div>
-              <label for={{to}} class="col-sm-2 control-label">to</label>
+              <label class="col-sm-2 control-label">to</label>
               <div class="col-sm-4">
-                <input id={{to}} class="form-control" type="text">
+                <input class="form-control" type="text" value="{{from}}">
               </div>
             </div>
             {{/each}}

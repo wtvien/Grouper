@@ -6,9 +6,9 @@ exports.view = function(req, res) {
   var user = data.students[0];
   // Load data for each enrolled course
   var courses = [];
-  for (let courseData of user.courses) {
-    let course = data.courses.find(function(c) { return c.id === courseData.id; });
-    course.url = encodeURI('/course/' + courseData.id);
+  for (let courseId in user.groups) {
+    let course = data.courses.find(function(c) { return c.id === courseId; });
+    course.url = encodeURI('/course/' + courseId);
     courses.push(course);
   }
   res.render('index', {

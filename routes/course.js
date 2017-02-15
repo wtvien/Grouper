@@ -12,12 +12,11 @@ exports.view = function(req, res) {
     if (studentId === user.id)
       continue;
     let student = data.students.find(function(s) { return s.id === studentId;});
-    let studentCourseData = student.courses.find(function(c) { return c.id === courseId; });
     let peer = {
       name : student.name,
       description : 'description',
       url : encodeURI('/course/' + courseId + '/peer/' + studentId),
-      groupStatus : (studentCourseData.group.length + 1) + '/' + course.groupSize
+      groupStatus : course.groupSize - (student.groups[courseId].length + 1)
     };
     peers.push(peer);
   }

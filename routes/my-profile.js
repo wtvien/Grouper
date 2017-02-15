@@ -8,18 +8,23 @@ exports.view = function(req, res) {
     { year : "3rd", selected : user.year === "3rd" },
     { year : "4th", selected : user.year === "4th" },
     { year : "5th+", selected : user.year === "5th+" }
-  ]
-  var daysOfWeek = [
-    { day : "Mon", from: "inputMonFrom", to : "inputMonTo" },
-    { day : "Tues", from: "inputTuesFrom", to : "inputTuesTo" },
-    { day : "Wed", from: "inputWedFrom", to : "inputWedTo" },
-    { day : "Thurs", from: "inputThursFrom", to : "inputThursTo" },
-    { day : "Fri", from: "inputFriFrom", to : "inputFriTo" },
-    { day : "Sat", from: "inputSatFrom", to : "inputSatTo" },
-    { day : "Sun", from: "inputSunFrom", to : "inputSunTo" }
   ];
+  var locations = [
+    { loc : "On-campus", selected : user.location === "On-campus" },
+    { loc : "Off-campus", selected : user.location === "Off-campus" }
+  ];
+  var days = [];
+  for (let day in user.availability) {
+    days.push({ day : day, from : user.availability[day][0], to : user.availability[day][1] });
+  }
   res.render('my-profile', {
     title : 'My Profile',
-    daysOfWeek : daysOfWeek
+    name : user.name,
+    major : user.major,
+    years : years,
+    locations : locations,
+    days : days,
+    bio : user.bio,
+    roles : user.roles
    });
 };

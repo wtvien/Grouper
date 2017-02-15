@@ -4,11 +4,11 @@
       "id" : "123",
       "name" : "David Lee",
       "email" : "dal039@ucsd.edu",
-      "courses" : [
-        { "id" : "CSE 170", "group" : [] },
-        { "id" : "CSE 110", "group" : [] },
-        { "id" : "CSE 141L", "group" : [] }
-      ],
+      "groups" : {
+        "CSE 170" : [],
+        "CSE 110" : [],
+        "CSE 141L" : []
+      },
       "major" : "Computer Science",
       "year" : "4th",
       "location": "Off-campus",
@@ -28,9 +28,9 @@
       "id" : "456",
       "name" : "Whitney Vien",
       "email" : "wtvien@ucsd.edu",
-      "courses" : [
-        { "id" : "CSE 170", "group" : [] }
-      ],
+      "groups" : {
+        "CSE 170" : []
+      },
       "major" : "Physiology & Neuroscience",
       "year" : "4th",
       "location" : "Off-campus",
@@ -50,9 +50,9 @@
       "id" : "789",
       "name" : "David Amadeo",
       "email" : "damadeo@ucsd.edu",
-      "courses" : [
-        { "id" : "CSE 170", "group" : [] }
-      ],
+      "groups" : {
+        "CSE 170" : []
+      },
       "major" : "Computer Science",
       "year" : "2nd",
       "location" : "On-campus",
@@ -67,7 +67,7 @@
       },
       "bio" : "",
       "roles" : ""
-      }
+    }
   ],
   "courses" : [
     {
