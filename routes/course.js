@@ -16,7 +16,9 @@ exports.view = function(req, res) {
       name : student.name,
       description : 'description',
       url : encodeURI('/course/' + courseId + '/peer/' + studentId),
-      groupStatus : course.groupSize - (student.groups[courseId].length + 1)
+      groupStatus : course.groupSize - (student.groups[courseId].length + 1),
+      year : student.year,
+      location : student.location     
     };
     peers.push(peer);
   }
