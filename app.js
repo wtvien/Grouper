@@ -36,7 +36,6 @@ app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);
 app.get('/skeleton', skeleton.view);
 app.get('/index', index.view);
-app.get('/data', data.getData);
 app.get('/data', data.loadData);
 app.post('/data', data.saveData);
 app.get('/addCourse', add.addCourse);
