@@ -29,13 +29,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', index.view);
+app.get('/', signin.view);
 app.get('/my-profile', myProfile.view);
 app.get('/my-groups', myGroups.view);
 app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);
 app.get('/skeleton', skeleton.view);
-app.get('/signin', signin.view);
+app.get('/index', index.view);
 app.get('/data', data.getData);
 app.get('/addCourse', add.addCourse);
 
