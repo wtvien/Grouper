@@ -30,7 +30,9 @@
       "name" : "Whitney Vien",
       "email" : "wtvien@ucsd.edu",
       "groups" : {
-        "CSE 170" : []
+        "CSE 170" : [],
+        "CSE 110" : [],
+        "CSE 141L" : []
       },
       "major" : "Physiology & Neuroscience",
       "year" : "4th",
@@ -52,7 +54,9 @@
       "name" : "David Amadeo",
       "email" : "damadeo@ucsd.edu",
       "groups" : {
-        "CSE 170" : []
+        "CSE 170" : [],
+        "CSE 110" : [],
+        "CSE 141L" : []
       },
       "major" : "Computer Science",
       "year" : "2nd",
@@ -81,13 +85,13 @@
       "id" : "CSE 110",
       "title" : "Software Engineering",
       "groupSize" : 2,
-      "students" : ["123"]
+      "students" : ["123", "456", "789"]
     },
     {
       "id" : "CSE 141L",
       "title" : "Project in Computer Architecture",
       "groupSize" : 2,
-      "students" : ["123"]
+      "students" : ["123", "456", "789"]
     }
   ]
 }

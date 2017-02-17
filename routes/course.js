@@ -11,8 +11,9 @@ exports.view = function(req, res) {
   for (let studentId of course.students) {
     if (studentId === user.id)
       continue;
-    let student = data.students.find(function(s) { return s.id === studentId;});
+    let student = data.students.find(function(s) { return s.id === studentId; });
     let peer = {
+      id : student.id,
       name : student.name,
       major : student.major,
       year : student.year,
