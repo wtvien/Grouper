@@ -12,6 +12,8 @@ exports.view = function(req, res) {
     if (studentId === user.id)
       continue;
     let student = data.students.find(function(s) { return s.id === studentId; });
+    if (student.groups[courseId].length + 1 === course.groupSize)
+      continue;
     let peer = {
       id : student.id,
       name : student.name,
@@ -21,7 +23,7 @@ exports.view = function(req, res) {
       url : encodeURI('/course/' + courseId + '/peer/' + studentId),
       groupStatus : course.groupSize - (student.groups[courseId].length + 1),
       year : student.year,
-      location : student.location     
+      location : student.location
     };
     peers.push(peer);
   }

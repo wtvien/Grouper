@@ -29,7 +29,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/my-profile">My Profile</a></li>
             <li class="active"><a href="/my-groups">My Groups<span class="sr-only">(current)</span></a></li>
-            <li><a href="/signin">Sign Out</a></li>
+            <li><a href="/">Sign Out</a></li>
           </ul>
         </div>
       </div>
@@ -37,16 +37,36 @@
 
     <div class="my-groups">
       <h1 class="page-header" align="center">{{title}}</h1>
-      <p>Welcome to {{title}}</p>
+      <p>Welcome to {{title}}</p><br>
+      Click the group member if you wish to remove from your group.<br>
 
 			{{#each groups}}
+        <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  </div>
+
+                  <div class="modal-body">
+                    Are you sure you want to remove <b>{{name}}</b> from your group?
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="removeMember" data-dismiss="modal" aria-label="Close">Yes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">No</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+
 	      <div class="row">
 	        <div class="thumbnail">
 	          <div class="caption">
 	            <div class="well">
 	              <p>{{@key}}</p>
 								{{#each this}}
-									{{this}}
+									<a id="groupMember" data-toggle="modal" data-target="#myModal">{{name}}</a>
 								{{/each}}
 	            </div>
 	          </div>
@@ -58,5 +78,6 @@
 
   <script src="/js/jquery-3.1.1.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+	<script src="/js/my-groups.js"></script>
 </body>
 </html>
