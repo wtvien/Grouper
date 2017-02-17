@@ -7,7 +7,7 @@ $(document).ready(function() {
 });
 
 function initializePage() {
-  $('#groupMember').click(function() {
+  $('#removeMember').click(function() {
     $('#groupMember').remove();
   });
 }
