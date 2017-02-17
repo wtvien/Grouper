@@ -36,7 +36,8 @@ app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);
 app.get('/skeleton', skeleton.view);
 app.get('/signin', signin.view);
-app.get('/data', data.getData);
+app.get('/data', data.loadData);
+app.post('/data', data.saveData);
 app.get('/addCourse', add.addCourse);
 
 http.createServer(app).listen(app.get('port'), function(){

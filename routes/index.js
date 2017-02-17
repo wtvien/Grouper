@@ -13,6 +13,7 @@ exports.view = function(req, res) {
   }
   res.render('index', {
     title : 'Grouper',
+    name : user.name,
     courses : courses
    });
 };

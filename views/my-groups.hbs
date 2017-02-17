@@ -39,15 +39,20 @@
       <h1 class="page-header" align="center">{{title}}</h1>
       <p>Welcome to {{title}}</p>
 
-      <div class="row">
-        <div class="thumbnail">
-          <div class="caption">
-            <div class="well">
-              <p>text</p>
-            </div>
-          </div>
-        </div>
-      </div>
+			{{#each groups}}
+	      <div class="row">
+	        <div class="thumbnail">
+	          <div class="caption">
+	            <div class="well">
+	              <p>{{@key}}</p>
+								{{#each this}}
+									{{this}}
+								{{/each}}
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+			{{/each}}
 
   </div>
 
