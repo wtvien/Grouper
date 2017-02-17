@@ -4,7 +4,7 @@ var index = require('./index');
 exports.addCourse = function(req, res) { 
 	var newCourse = {
       "id" : "CSE 190",
-      "title" : "Enterprenurship",
+      "title" : "Entrepreneurship",
       "groupSize" : 2,
       "students" : ["123", "456", "789"]
     };

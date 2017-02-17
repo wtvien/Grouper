@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var myProfile = require('./routes/my-profile');
+var myGroups = require('./routes/my-groups');
 var course = require('./routes/course');
 var peer = require('./routes/peer');
 var skeleton = require('./routes/skeleton');
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', index.view);
 app.get('/my-profile', myProfile.view);
+app.get('/my-groups', myGroups.view);
 app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);
 app.get('/skeleton', skeleton.view);

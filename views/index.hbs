@@ -28,7 +28,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/my-profile">My Profile</a></li>
-            <li><a href="/setttings">Settings</a></li>
+            <li><a href="/my-groups">My Groups</a></li>
             <li><a href="/signin">Sign Out</a></li>
           </ul>
         </div>
@@ -45,7 +45,7 @@
 	    <div class="row placeholders">
 				{{#each courses}}
 	      <div class="col-xs-12 col-sm-6 col-md-4 placeholder">
-		    <div class="center-block panel panel-default course-panel">
+		    <div class="center-block panel panel-default course-panel" id="panelid">
 			  <div class="panel-heading">
 			    <a href={{url}}><h3 class="panel-title">{{id}}</h3></a>
 			  </div>
@@ -63,11 +63,11 @@
                         </div> 
 
                         <div class="modal-body">
-                          Are you sure you want to remove <b>{{title}}</b> from your list of courses?                   
+                          Are you sure you want to remove <b>{{id}}</b> from your list of courses?                   
                         </div>
 
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-default"><a href="/">Yes</a></button>
+                          <button type="button" class="btn btn-default" id="removeBtn" data-dismiss="modal" aria-label="Close">Yes</button>
                           <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">No</button>
                         </div>
                     </div>
@@ -94,5 +94,14 @@
 
   <script src="/js/jquery-3.1.1.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+
+  <script>
+  	$(document).ready(function(){
+  		$("#removeBtn").click(function(){
+  			$("#panelid").remove();
+  		});
+  	});
+  </script>
+
 </body>
 </html>

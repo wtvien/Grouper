@@ -14,7 +14,9 @@ exports.view = function(req, res) {
     let student = data.students.find(function(s) { return s.id === studentId;});
     let peer = {
       name : student.name,
-      description : 'description',
+      major : student.major,
+      year : student.year,
+      location : student.location,
       url : encodeURI('/course/' + courseId + '/peer/' + studentId),
       groupStatus : course.groupSize - (student.groups[courseId].length + 1)
     };
