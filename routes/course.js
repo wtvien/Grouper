@@ -19,7 +19,9 @@ exports.view = function(req, res) {
       year : student.year,
       location : student.location,
       url : encodeURI('/course/' + courseId + '/peer/' + studentId),
-      groupStatus : course.groupSize - (student.groups[courseId].length + 1)
+      groupStatus : course.groupSize - (student.groups[courseId].length + 1),
+      year : student.year,
+      location : student.location     
     };
     peers.push(peer);
   }

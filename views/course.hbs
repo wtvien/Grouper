@@ -38,10 +38,31 @@
     <div class="course">
       <h1 class="page-header" align="center">{{title}}</h1>
       <p>Welcome to {{title}}</p>
-
-      <div class="row placeholders">
+        <select id="year-sel" name="year" class="filter-selectors">
+          <option value="NULL">Grade</option>
+          <option value="1st">1st</option>
+          <option value="2nd">2nd</option>
+          <option value="3rd">3rd</option>
+          <option value="4th">4th</option>
+          <option value="5th+">5th+</option>
+        </select>
+        <!--
+        <select name="major">
+          <option value="1st"></option>
+          <option value="2nd">2nd</option>
+          <option value="3rd">3rd</option>
+          <option value="4th">4th</option>
+          <option value="5th+">5th+</option>
+        </select>-->
+        <select id="location-sel" name="location" class="filter-selectors">
+          <option value="NULL">Location</option>
+          <option value="On-campus">On-campus</option>
+          <option value="Off-campus">Off-campus</option>
+        </select> 
+      <!--<button type="submit" form="course-filters" formmethod="get" id="filter-button">Submit</button>-->
+      <div class="row placeholders" id="peer-list">
         {{#each peers}}
-        <div class="col-xs-12 col-sm-6 col-md-4 placeholder">
+        <div class="col-xs-12 col-sm-6 col-md-4 placeholder NULL {{year}} {{location}}">
           <div class="center-block panel panel-default course-panel">
             <div class="panel-heading">
               <a href={{url}}><h3 class="panel-title">{{name}}</h3></a>
@@ -86,5 +107,6 @@
 
   <script src="/js/jquery-3.1.1.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/course.js"></script>
 </body>
 </html>
