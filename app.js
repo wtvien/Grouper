@@ -8,10 +8,12 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var myProfile = require('./routes/my-profile');
+var myGroups = require('./routes/my-groups');
 var course = require('./routes/course');
 var peer = require('./routes/peer');
 var skeleton = require('./routes/skeleton');
 var signin = require('./routes/signin');
+var data = require('./routes/data');
 var add = require('./routes/addCourse');
 
 var app = express();
@@ -29,10 +31,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', index.view);
 app.get('/my-profile', myProfile.view);
+app.get('/my-groups', myGroups.view);
 app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);
 app.get('/skeleton', skeleton.view);
 app.get('/signin', signin.view);
+app.get('/data', data.getData);
 app.get('/addCourse', add.addCourse);
 
 http.createServer(app).listen(app.get('port'), function(){
