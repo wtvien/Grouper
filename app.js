@@ -35,14 +35,10 @@ app.get('/my-groups', myGroups.view);
 app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);
 app.get('/skeleton', skeleton.view);
-<<<<<<< HEAD
 app.get('/index', index.view);
 app.get('/data', data.getData);
-=======
-app.get('/signin', signin.view);
 app.get('/data', data.loadData);
 app.post('/data', data.saveData);
->>>>>>> 6bf09607ee75a9174361a4f438f151a0adbbd92a
 app.get('/addCourse', add.addCourse);
 
 http.createServer(app).listen(app.get('port'), function(){
