@@ -16,6 +16,7 @@ exports.view = function(req, res) {
     title : peer.name,
     id : peerId,
     name : peer.name,
+    avatar : peer.avatar,
     major : peer.major,
     year : peer.year,
     location : peer.location,
