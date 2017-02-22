@@ -14,6 +14,7 @@ exports.registerUser = function(req, res) {
     email : req.body.email,
     groups : {},
     invites : {},
+    avatar : 'default.png',
     major : '',
     year : '',
     location : '',

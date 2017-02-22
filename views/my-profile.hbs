@@ -35,11 +35,11 @@
     </nav>
 
     <div class="profile">
-      <form id="profileForm" class="form-horizontal" method="POST", action="/my-profile">
+      <form id="profileForm" class="form-horizontal" enctype="multipart/form-data" method="POST", action="/my-profile">
         <div class="row">
           <div class="col-sm-4">
-            <input class="img-responsive" type="image" src="http://lorempixel.com/400/400/people">
-            <input type="file" style="display: none">
+            <input class="img-responsive" type="image" src="/images/{{avatar}}">
+            <input name="avatar" type="file" accept="image/*" style="display: none">
           </div>
           <div class="col-sm-8">
             <h1 class="page-header">{{name}}</h1>

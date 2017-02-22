@@ -12,6 +12,7 @@ exports.view = function(req, res) {
     title : 'My Profile',
     name : user.name,
     major : user.major,
+    avatar : user.avatar,
     days : days,
     bio : user.bio,
     roles : user.roles
@@ -20,6 +21,7 @@ exports.view = function(req, res) {
 
 exports.updateProfile = function(req, res) {
   var user = data.students[0];
+  user.avatar = req.file.filename;
   user.major = req.body.major;
   user.year = req.body.year;
   user.location = req.body.location;

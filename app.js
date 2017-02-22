@@ -5,6 +5,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var multer  = require('multer');
+var upload = multer({ dest: 'public/images' });
 
 var index = require('./routes/index');
 var myProfile = require('./routes/my-profile');
@@ -31,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', signin.view);
 app.post('/', signin.registerUser);
 app.get('/my-profile', myProfile.view);
-app.post('/my-profile', myProfile.updateProfile);
+app.post('/my-profile', upload.single('avatar'), myProfile.updateProfile);
 app.get('/my-groups', myGroups.view);
 app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);

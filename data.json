@@ -10,6 +10,7 @@
         "CSE 141L" : []
       },
       "invites" : {},
+      "avatar" : "default.png",
       "major" : "Computer Science",
       "year" : "4th",
       "location": "Off-campus",
@@ -35,6 +36,7 @@
         "CSE 141L" : []
       },
       "invites" : {},
+      "avatar" : "default.png",
       "major" : "Physiology & Neuroscience",
       "year" : "4th",
       "location" : "Off-campus",
@@ -60,6 +62,7 @@
         "CSE 141L" : []
       },
       "invites" : {},
+      "avatar" : "default.png",
       "major" : "Computer Science",
       "year" : "2nd",
       "location" : "On-campus",
