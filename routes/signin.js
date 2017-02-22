@@ -7,6 +7,7 @@ exports.view = function(req, res) {
 };
 
 exports.registerUser = function(req, res) {
+  // TODO: ensure req.body.email does not already exist
   var user = {
     id : shortid.generate(),
     name : req.body.name,
@@ -28,7 +29,7 @@ exports.registerUser = function(req, res) {
     bio : '',
     roles : ''
   }
-  data.students.push(user);
+  data.students.splice(0, 0, user);
   fs.writeFile('data.json', JSON.stringify(data), function(err) {
     if (err) console.log(err);
   });
