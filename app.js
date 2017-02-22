@@ -31,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', signin.view);
 app.post('/', signin.registerUser);
 app.get('/my-profile', myProfile.view);
+app.post('/my-profile', myProfile.updateProfile);
 app.get('/my-groups', myGroups.view);
 app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);

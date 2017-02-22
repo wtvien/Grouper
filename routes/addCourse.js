@@ -10,8 +10,6 @@ exports.addCourse = function(req, res) { 
       "students" : [data.students[0].id]
     };
 
-	console.log(newCourse);
-
 	// Professor/TA action
 	data.courses.push(newCourse);
 	// Student action
