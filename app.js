@@ -29,6 +29,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', signin.view);
+app.post('/', signin.registerUser);
 app.get('/my-profile', myProfile.view);
 app.get('/my-groups', myGroups.view);
 app.get('/course/:courseId', course.view);
