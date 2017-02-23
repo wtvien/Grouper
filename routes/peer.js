@@ -2,7 +2,6 @@ var data = require('../data.json');
 
 exports.view = function(req, res) {
   var courseId = req.params.courseId;
-
   var peerId = req.params.peerId;
   var peer = data.students.find(function(s) { return s.id === peerId});
 
@@ -16,6 +15,7 @@ exports.view = function(req, res) {
     title : peer.name,
     id : peerId,
     name : peer.name,
+    avatar : peer.avatar,
     major : peer.major,
     year : peer.year,
     location : peer.location,
@@ -26,4 +26,13 @@ exports.view = function(req, res) {
     courseId : courseId,
     courseUrl : encodeURI('/course/' + courseId)
   });
+};
+
+exports.joinGroup = function(req, res) {
+  var courseId = req.params.courseId;
+  var peerId = req.params.peerId;
+  var user = data.students[0];
+  var peer = data.students.find(function(s) { return s.id === peerId });
+  user.groups[courseId].push(peerId);
+  peer.groups[courseId].push(user.id);
 };

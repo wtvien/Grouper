@@ -17,6 +17,7 @@ exports.view = function(req, res) {
     let peer = {
       id : student.id,
       name : student.name,
+      avatar : student.avatar,
       major : student.major,
       year : student.year,
       location : student.location,
