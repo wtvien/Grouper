@@ -8,7 +8,7 @@ exports.view = function(req, res) {
     groups[groupId] = [];
     for (let studentId of user.groups[groupId]) {
       let student = data.students.find(function(s) { return s.id === studentId; });
-      groups[groupId].push(student.name);
+      groups[groupId].push(student);
     }
   }
 

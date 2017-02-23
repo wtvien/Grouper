@@ -7,7 +7,6 @@ exports.loadData = function(req, res) {
 
 exports.saveData = function(req, res) {
   var data = req.body;
-  console.log(data);
   fs.writeFile('data.json', JSON.stringify(data), function(err) {
     if (err) console.log(err);
   });

@@ -1,11 +1,9 @@
 var data;
 $(document).ready(function() {
-  $.get('/data', getData);
+  $.get('/data', function(result) {
+    data = result;
+  });
 });
-
-function getData(result) {
-  data = result;
-}
 
 function joinGroup(courseId, peerId) {
   data.students[0].groups[courseId].push(peerId);
