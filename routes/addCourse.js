@@ -14,6 +14,7 @@ exports.addCourse = function(req, res) { 
 	data.courses.push(newCourse);
 	// Student action
 	data.students[0].groups[newCourse.id] = [];
+	data.students[0].invites[newCourse.id] = [];
 	fs.writeFile('data.json', JSON.stringify(data), function(err) {
 		if (err) console.log(err);
 	});

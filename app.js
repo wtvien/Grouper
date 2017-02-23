@@ -31,16 +31,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', signin.view);
-app.post('/', signin.registerUser);
+app.post('/login', signin.login);
+app.post('/register', signin.registerUser);
+app.get('/index', index.view);
+app.get('/addCourse', add.addCourse);
 app.get('/my-profile', myProfile.view);
 app.post('/my-profile', upload.single('avatar'), myProfile.updateProfile);
 app.get('/my-groups', myGroups.view);
 app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);
-app.get('/index', index.view);
 app.get('/data', data.loadData);
 app.post('/data', data.saveData);
-app.get('/addCourse', add.addCourse);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
