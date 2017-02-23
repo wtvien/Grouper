@@ -8,7 +8,8 @@ exports.addCourse = function(req, res) { 
       "id" : "CSE 190",
       "title" : "Entrepreneurship",
       "groupSize" : 2,
-      "students" : [user.id]
+      "students" : [user.id],
+	  "modalID" : "4"
     };
 
 	// Professor/TA action

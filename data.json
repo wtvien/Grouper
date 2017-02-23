@@ -84,19 +84,22 @@
       "id" : "CSE 170",
       "title" : "Interaction Design",
       "groupSize" : 2,
-      "students" : ["123", "456", "789"]
+      "students" : ["123", "456", "789"],
+      "modalID" : "1"
     },
     {
       "id" : "CSE 110",
       "title" : "Software Engineering",
       "groupSize" : 2,
-      "students" : ["123", "456", "789"]
+      "students" : ["123", "456", "789"],
+      "modalID" : "2"
     },
     {
       "id" : "CSE 141L",
       "title" : "Project in Computer Architecture",
       "groupSize" : 2,
-      "students" : ["123", "456", "789"]
+      "students" : ["123", "456", "789"],
+      "modalID" : "3"
     }
   ]
 }
