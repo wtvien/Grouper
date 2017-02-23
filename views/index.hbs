@@ -54,7 +54,7 @@
 	    <div class="row placeholders">
 				{{#each courses}}
 	      <div class="col-xs-12 col-sm-6 col-md-4 placeholder">
-				<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal fade" id="{{id}}" role="dialog">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
@@ -80,7 +80,7 @@
 						<div class="panel-body">
 				          <p><span class="text-muted">{{title}}</span></p>
 
-				          <button type="button" class ="btn btn-default" data-toggle="modal" data-target="#myModal">Remove course</button>
+				          <button type="button" class ="btn btn-default" data-toggle="modal" data-target="#{{id}}">Remove course</button>
 
 
 
