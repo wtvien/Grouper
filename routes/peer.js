@@ -28,3 +28,8 @@ exports.view = function(req, res) {
     courseUrl : encodeURI('/course/' + courseId)
   });
 };
+
+exports.joinGroup = function(req, res) {
+  data.students[0].groups[req.params.courseId].push(req.params.peerId);
+  console.log(data);
+};

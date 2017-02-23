@@ -1,5 +1,4 @@
 var data = require('../data.json');
-var fs = require('fs');
 var shortid = require('shortid');
 
 exports.view = function(req, res) {
@@ -12,9 +11,6 @@ exports.login = function(req, res) {
     if (data.students.indexOf(user) !== 0)
       data.students.splice(0, 0, user);
 
-    fs.writeFile('data.json', JSON.stringify(data), function(err) {
-      if (err) console.log(err);
-    });
     res.redirect('/index');
   } else {
     // TODO: Incorrect login
@@ -52,9 +48,6 @@ exports.registerUser = function(req, res) {
       roles : ''
     }
     data.students.splice(0, 0, user);
-    fs.writeFile('data.json', JSON.stringify(data), function(err) {
-      if (err) console.log(err);
-    });
 
     res.redirect('/index');
   }

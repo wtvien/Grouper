@@ -14,7 +14,6 @@ var myGroups = require('./routes/my-groups');
 var course = require('./routes/course');
 var peer = require('./routes/peer');
 var signin = require('./routes/signin');
-var data = require('./routes/data');
 var add = require('./routes/addCourse');
 
 var app = express();
@@ -40,8 +39,7 @@ app.post('/my-profile', upload.single('avatar'), myProfile.updateProfile);
 app.get('/my-groups', myGroups.view);
 app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);
-app.get('/data', data.loadData);
-app.post('/data', data.saveData);
+app.post('/course/:courseId/peer/:peerId', peer.joinGroup);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

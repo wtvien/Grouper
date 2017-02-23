@@ -1,5 +1,4 @@
 var data = require('../data.json');
-var fs = require('fs');
 
 exports.view = function(req, res) {
   var user = data.students[0];
@@ -30,8 +29,5 @@ exports.updateProfile = function(req, res) {
   user.bio = req.body.bio;
   user.roles = req.body.roles;
   data.students[0] = user;
-  fs.writeFile('data.json', JSON.stringify(data), function(err) {
-    if (err) console.log(err);
-  });
   res.redirect('my-profile');
 };
