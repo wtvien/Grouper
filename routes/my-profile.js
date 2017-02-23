@@ -20,7 +20,8 @@ exports.view = function(req, res) {
 
 exports.updateProfile = function(req, res) {
   var user = data.students[0];
-  user.avatar = req.file.filename;
+  if (req.file)
+    user.avatar = req.file.filename;
   user.major = req.body.major;
   user.year = req.body.year;
   user.location = req.body.location;
@@ -28,6 +29,5 @@ exports.updateProfile = function(req, res) {
     user.availability[day] = [req.body[day + "From"], req.body[day + "To"]];
   user.bio = req.body.bio;
   user.roles = req.body.roles;
-  data.students[0] = user;
   res.redirect('my-profile');
 };

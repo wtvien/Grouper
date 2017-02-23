@@ -2,7 +2,6 @@ var data = require('../data.json');
 
 exports.view = function(req, res) {
   var courseId = req.params.courseId;
-
   var peerId = req.params.peerId;
   var peer = data.students.find(function(s) { return s.id === peerId});
 
@@ -30,6 +29,10 @@ exports.view = function(req, res) {
 };
 
 exports.joinGroup = function(req, res) {
-  data.students[0].groups[req.params.courseId].push(req.params.peerId);
-  console.log(data);
+  var courseId = req.params.courseId;
+  var peerId = req.params.peerId;
+  var user = data.students[0];
+  var peer = data.students.find(function(s) { return s.id === peerId });
+  user.groups[courseId].push(peerId);
+  peer.groups[courseId].push(user.id);
 };

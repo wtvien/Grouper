@@ -8,13 +8,14 @@ var bodyParser = require('body-parser');
 var multer  = require('multer');
 var upload = multer({ dest: 'public/images' });
 
+var signin = require('./routes/signin');
 var index = require('./routes/index');
+var add = require('./routes/addCourse');
 var myProfile = require('./routes/my-profile');
 var myGroups = require('./routes/my-groups');
 var course = require('./routes/course');
 var peer = require('./routes/peer');
-var signin = require('./routes/signin');
-var add = require('./routes/addCourse');
+var data = require('./routes/data');
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.get('/my-groups', myGroups.view);
 app.get('/course/:courseId', course.view);
 app.get('/course/:courseId/peer/:peerId', peer.view);
 app.post('/course/:courseId/peer/:peerId', peer.joinGroup);
+app.get('/data', data.loadData);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
