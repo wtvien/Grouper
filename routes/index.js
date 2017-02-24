@@ -26,14 +26,11 @@ exports.addCourse = function(req, res) { 
       "name" : "CSE 190",
       "title" : "Entrepreneurship",
       "groupSize" : 2,
-      "students" : [user.id]
+      "students" : ["000", "123", "456", "789", "111", "222", "333", "444", "555", "666"]
     };
 
-	// Professor/TA action
-	data.courses.push(newCourse);
-	// Student action
 	user.groups[newCourse.id] = [];
-	user.invites[newCourse.id] = [];
+	// user.invites[newCourse.id] = [];
 
 	res.redirect('/index');
  };
