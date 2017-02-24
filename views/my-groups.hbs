@@ -48,11 +48,11 @@
                   </div>
 
                   <div class="modal-body">
-                    Are you sure you want to leave this <b>{{@key}}</b> group?
+                    Are you sure you want to leave this <b>{{name}}</b> group?
                   </div>
 
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="removeMember" data-dismiss="modal" aria-label="Close">Yes</button>
+                    <button type="button" class="btn btn-default" id="leaveGroup" onclick="leaveGroup('{{@key}}')" data-dismiss="modal" aria-label="Close">Yes</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">No</button>
                   </div>
               </div>
@@ -62,13 +62,13 @@
 	      <div class="row">
 	        <div class="panel panel-default">
             <div class="panel-heading">
-              <p><h3 class="panel-title">{{@key}}</h3></p>
+              <p><h3 class="panel-title">{{name}}</h3></p>
             </div>
             <div class="panel-body">
-							{{#each this}}
+							{{#each members}}
 							  <p><a id="groupMember">{{name}} </a></p>
 						  {{/each}}
-              <button type="button" class="btn btn-default" id="leaveGroupBtn" data-toggle="modal" data-target="#leaveGroup">Leave group</button>
+              <button type="button" class="btn btn-default" id="leaveGroupBtn" data-toggle="modal" data-target="#{{@key}}">Leave group</button>
             </div>
 	        </div>
 	      </div>
