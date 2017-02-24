@@ -51,12 +51,8 @@
           <option value="On-campus">On-campus</option>
           <option value="Off-campus">Off-campus</option>
         </select>
-
-      <div class="row">
-        <input type="text" class="form-control search-peer col-sm-4" placeholder="Filter by name">
-      </div>
+        <input type="text" class="form-control search-peer" placeholder="Text input">
       <div class="row" id="peer-list">
-
         {{#each peers}}
         <div class="media placeholder NULL {{year}} {{location}}">
             <div class="media-left">
@@ -76,9 +72,9 @@
         {{/each}}
       </div>
 
-      <a href="#" id="backTopBtn" class="btn btn-primary btn-lg" role="button" title="Return back to the top of the page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
     </div>
 
+    <a href="#" id="backTopBtn" class="btn btn-primary btn-lg" role="button" title="Return back to the top of the page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
   </div>
 
   <script src="/js/jquery-3.1.1.min.js"></script>
