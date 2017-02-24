@@ -1,8 +1,14 @@
 //var data = require(./public/data.json);
 
 $(document).ready(function() {
+<<<<<<< HEAD
+	$('select').change(updatePeerList);	
+	$(window).scroll(backToTop);
+
+=======
 	$('select').change(updatePeerList);
 	$('.search-peer').keyup(searchFilter);
+>>>>>>> a4fb9392aa3f9fa2d1da0583697466e3ac52435b
 });
 
 function updatePeerList(e) {
@@ -18,6 +24,11 @@ function updatePeerList(e) {
 	console.log(year);
 };
 
+<<<<<<< HEAD
+function backToTop() {
+
+}
+=======
 function searchFilter(e) {
 	var i;
 	var names;
@@ -36,3 +47,4 @@ function searchFilter(e) {
 		}
 	});
 };
+>>>>>>> a4fb9392aa3f9fa2d1da0583697466e3ac52435b
