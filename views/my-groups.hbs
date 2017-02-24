@@ -40,7 +40,7 @@
       <p>Welcome to {{title}}</p><br>
 
 			{{#each groups}}
-        <div class="modal fade" id="leaveGroup" role="dialog">
+        <div class="modal fade" id="{{@key}}" role="dialog">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -63,7 +63,7 @@
 	        <div class="thumbnail">
 	          <div class="caption">
               <p><b>{{@key}}</b>
-              <button type="button" class="btn btn-default" id="leaveGroupBtn" data-toggle="modal" data-target="#leaveGroup">Leave group</button>
+              <button type="button" class="btn btn-default" id="leaveGroupBtn" data-toggle="modal" data-target="#{{@key}}">Leave group</button>
               </p>
 							{{#each this}}
 							  <a id="groupMember">{{name}} </a>
