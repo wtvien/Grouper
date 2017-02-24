@@ -51,6 +51,7 @@
           <option value="On-campus">On-campus</option>
           <option value="Off-campus">Off-campus</option>
         </select>
+        <input type="text" class="form-control search-peer col-sm-4" placeholder="Filter by name">
       <div class="row placeholders" id="peer-list">
         {{#each peers}}
         <div class="col-xs-12 col-sm-6 col-md-4 placeholder NULL {{year}} {{location}}">
@@ -69,7 +70,7 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="myModalLabel">{{name}}</h4>
+                      <h4 class="modal-title">{{name}}</h4>
                     </div>
 
                     <div class="modal-body">

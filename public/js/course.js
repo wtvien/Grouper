@@ -1,8 +1,8 @@
 //var data = require(./public/data.json);
 
 $(document).ready(function() {
-	$('select').change(updatePeerList);	
-
+	$('select').change(updatePeerList);
+	$('.search-peer').keyup(searchFilter);
 });
 
 function updatePeerList(e) {
@@ -16,4 +16,23 @@ function updatePeerList(e) {
 	console.log(year);
 	$('#peer-list .' + year + '.' + location).show();
 	console.log(year);
+};
+
+function searchFilter(e) {
+	var i;
+	var names;
+	var input = $('.search-peer').val().toUpperCase();
+
+	$('#peer-list > div').each(function() {
+		if ($(this).find('.modal-title').html().toUpperCase().indexOf(input) > -1) {
+			console.log('if');
+			$(this).show();
+			console.log(this);
+		}
+		else {
+			console.log('else');
+			$(this).hide();
+			console.log(this);
+		}
+	});
 };
