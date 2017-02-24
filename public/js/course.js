@@ -2,6 +2,7 @@
 
 $(document).ready(function() {
 	$('select').change(updatePeerList);	
+	$(window).scroll(backToTop);
 
 });
 
@@ -17,3 +18,7 @@ function updatePeerList(e) {
 	$('#peer-list .' + year + '.' + location).show();
 	console.log(year);
 };
+
+function backToTop() {
+
+}
