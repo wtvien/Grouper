@@ -8,7 +8,7 @@ exports.view = function(req, res) {
   var courses = [];
   for (let courseId in user.groups) {
     let course = data.courses.find(function(c) { return c.id === courseId; });
-    course.url = encodeURI('/course/' + courseId);
+    course.url = '/course/' + courseId;
     courses.push(course);
   }
   res.render('index', {
@@ -22,11 +22,11 @@ exports.addCourse = function(req, res) { 
 	var user = data.students[0];
 
 	var newCourse = {
-      "id" : "CSE 190",
+      "id" : "jkl",
+      "name" : "CSE 190",
       "title" : "Entrepreneurship",
       "groupSize" : 2,
-      "students" : [user.id],
-	     "modalID" : "4"
+      "students" : [user.id]
     };
 
 	// Professor/TA action

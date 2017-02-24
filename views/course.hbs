@@ -52,7 +52,11 @@
           <option value="Off-campus">Off-campus</option>
         </select>
 
+      <div class="row">
+        <input type="text" class="form-control search-peer col-sm-4" placeholder="Filter by name">
+      </div>
       <div class="row" id="peer-list">
+
         {{#each peers}}
         <div class="media placeholder NULL {{year}} {{location}}">
             <div class="media-left">
@@ -66,6 +70,7 @@
               <label for="inputMajor" class="control-label">Major:</label> {{major}} <br>
               <label for="inputYear" class="control-label">Year:</label> {{year}}<br>
               <label for="inputLocation" class="control-label">Location:</label> {{location}}
+
           </div>
         </div>
         {{/each}}
