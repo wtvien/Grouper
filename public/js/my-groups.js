@@ -1,13 +1,3 @@
-var data;
-$(document).ready(function() {
-  $.get('/data', function(result) {
-    data = result;
-  });
-  initializePage();
-});
-
-function initializePage() {
-  $('#removeMember').click(function() {
-    $('#groupMember').remove();
-  });
+function leaveGroup(courseId) {
+  $.post('/my-groups/', { courseId : courseId }, function() { location.reload(); });
 }

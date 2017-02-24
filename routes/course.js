@@ -29,7 +29,7 @@ exports.view = function(req, res) {
     peers.push(peer);
   }
   res.render('course', {
-    title : courseId,
+    title : course.name,
     peers : peers
    });
 };

@@ -54,6 +54,9 @@ body {
   outline:0;
 }
 
+#peer-list {
+  margin-top: 25px;
+}
 
 /* Peer */
 .peer .row {

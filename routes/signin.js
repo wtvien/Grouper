@@ -8,8 +8,10 @@ exports.view = function(req, res) {
 exports.login = function(req, res) {
   var user = data.students.find(function(s) { return s.email === req.body.email });
   if (user /* && user.password === req.body.password */) {
-    if (data.students.indexOf(user) !== 0)
+    if (data.students[0] !== user) {
+      data.students.splice(data.students.indexOf(user), 1);
       data.students.splice(0, 0, user);
+    }
 
     res.redirect('/index');
   } else {
@@ -25,7 +27,7 @@ exports.registerUser = function(req, res) {
     res.redirect('/');
   } else {
     // TODO: store password
-    var user = {
+    user = {
       id : shortid.generate(),
       name : req.body.name,
       email : req.body.email,
