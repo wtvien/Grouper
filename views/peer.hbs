@@ -83,7 +83,7 @@
 
     <div class="row">
       <center><a href="{{mailto}}" class="btn btn-default" role="button">Email {{name}}</a>
-	      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="joinGroup('{{courseId}}', '{{id}}')">Join group</button>
+	      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="joinGroup()">Join group</button>
 	      <div class="modal fade" id="myModal" role="dialog">
 	        <div class="modal-dialog" role="document">
 	          <div class="modal-content">
@@ -106,6 +106,7 @@
     </form>
   </div>
 
+	<script>var courseId = '{{courseId}}', peerId = '{{id}}'</script>
   <script src="/js/jquery-3.1.1.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
 	<script src="/js/peer.js"></script>

@@ -29,6 +29,7 @@ exports.view = function(req, res) {
 };
 
 exports.joinGroup = function(req, res) {
+  // TODO: handle more than 2 people
   var courseId = req.params.courseId;
   var peerId = req.params.peerId;
   var user = data.students[0];

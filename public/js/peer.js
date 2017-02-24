@@ -1,3 +1,3 @@
-function joinGroup(courseId, peerId) {
+function joinGroup() {
   $.post('/course/' + courseId + '/peer/' + peerId);
 }
