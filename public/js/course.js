@@ -24,7 +24,7 @@ function searchFilter(e) {
 	var input = $('.search-peer').val().toUpperCase();
 
 	$('#peer-list > div').each(function() {
-		if ($(this).find('.modal-title').html().toUpperCase().indexOf(input) > -1) {
+		if ($(this).find('.media-heading').html().toUpperCase().indexOf(input) > -1) {
 			console.log('if');
 			$(this).show();
 			console.log(this);
