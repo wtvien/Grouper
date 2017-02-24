@@ -8,6 +8,7 @@ exports.view = function(req, res) {
     groups[courseId] = { members : [] };
     for (let studentId of user.groups[courseId]) {
       let student = data.students.find(function(s) { return s.id === studentId; });
+      student.url = '/course/' + courseId + '/peer/' + studentId;
       groups[courseId].members.push(student);
     }
     var course = data.courses.find(function(c) { return c.id === courseId });

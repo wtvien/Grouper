@@ -11,9 +11,9 @@
       },
       "invites" : {},
       "avatar" : "default.png",
-      "major" : "Computer Science",
-      "year" : "NULL",
-      "location": "NULL",
+      "major" : "",
+      "year" : "",
+      "location": "",
       "availability" : {
         "Mon" : ["", ""],
         "Tues" : ["", ""],

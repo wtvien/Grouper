@@ -41,23 +41,23 @@
 
 			{{#each groups}}
         <div class="modal fade" id="{{@key}}" role="dialog">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  </div>
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
 
-                  <div class="modal-body">
-                    Are you sure you want to leave this <b>{{name}}</b> group?
-                  </div>
+              <div class="modal-body">
+                Are you sure you want to leave this <b>{{name}}</b> group?
+              </div>
 
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="leaveGroup" onclick="leaveGroup('{{@key}}')" data-dismiss="modal" aria-label="Close">Yes</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">No</button>
-                  </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="leaveGroup" onclick="leaveGroup('{{@key}}')" data-dismiss="modal" aria-label="Close">Yes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">No</button>
               </div>
             </div>
           </div>
+        </div>
 
 	      <div class="row">
 	        <div class="panel panel-default">
@@ -66,7 +66,7 @@
             </div>
             <div class="panel-body">
 							{{#each members}}
-							  <p><a id="groupMember">{{name}} </a></p>
+							  <p><a href="{{url}}" id="groupMember">{{name}} </a></p>
 						  {{/each}}
               <button type="button" class="btn btn-default" id="leaveGroupBtn" data-toggle="modal" data-target="#{{@key}}">Leave group</button>
             </div>
