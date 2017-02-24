@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>{{title}}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width", inital-scale="1.0">
+
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/index">Grouper <span class="glyphicon glyphicon-home"></span></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/my-profile">My Profile</a></li>
+            <li class="active"><a href="/my-groups">My Groups<span class="sr-only">(current)</span></a></li>
+            <li><a href="/">Sign Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="my-groups">
+      <h1 class="page-header" align="center">{{title}}</h1>
+      <p>Welcome to {{title}}</p><br>
+
+			{{#each groups}}
+        <div class="modal fade" id="{{@key}}" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+
+              <div class="modal-body">
+                Are you sure you want to leave this <b>{{name}}</b> group?
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="leaveGroup" onclick="leaveGroup('{{@key}}')" data-dismiss="modal" aria-label="Close">Yes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">No</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+	      <div class="row">
+	        <div class="panel panel-default">
+            <div class="panel-heading">
+              <p><h3 class="panel-title">{{name}}</h3></p>
+            </div>
+            <div class="panel-body">
+							{{#each members}}
+							  <p><a href="{{url}}" id="groupMember">{{name}} </a></p>
+						  {{/each}}
+              <button type="button" class="btn btn-default" id="leaveGroupBtn" data-toggle="modal" data-target="#{{@key}}">Leave group</button>
+            </div>
+	        </div>
+	      </div>
+			{{/each}}
+
+  </div>
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+	<script src="/js/my-groups.js"></script>
+</body>
+</html>

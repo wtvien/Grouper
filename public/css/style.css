@@ -27,13 +27,14 @@ body {
   height: 200px;
 }
 
-.input[type=text] {
-    width: 50%;
-}
-
-/* change input width to 100% */
-input[type=text]:focus {
-    width: 100%;
+.home .modal {
+  padding-top: 100px;
+  position:fixed;
+  top:0;right:0;bottom:0;left:0;
+  z-index:1050;
+  display:none;
+  overflow:hidden;-webkit-overflow-scrolling:touch;
+  outline:0;
 }
 
 /* Profile */
@@ -53,6 +54,9 @@ input[type=text]:focus {
   outline:0;
 }
 
+#peer-list {
+  margin-top: 25px;
+}
 
 /* Peer */
 .peer .row {
@@ -73,5 +77,3 @@ input[type=text]:focus {
   padding-right: 15px;
   padding-left: 30px;
 }
-
-
