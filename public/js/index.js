@@ -1,17 +1,14 @@
 $(document).ready(initializePage());
 
 function initializePage() {
-  $.get('/data', removeCourse);
+  $.get('/data', removeCourseHandlers);
  }
 
-function removeCourse(result) {
+function removeCourseHandlers(result) {
   var courses = result.courses;
   for (let c of courses) {
-    $('#removeBtn'+c.modalID).click(function() {
-  	  console.log("clicked");
-      $('#panel'+c.modalID).remove();
-      console.log("removed");
+    $('#removeBtn' + c.id).click(function() {
+      $.post('/index/remove-course', { id : c.id }, function() { location.reload(); });
     });
   }
-
 }

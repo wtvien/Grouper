@@ -38,10 +38,9 @@
     <div class="my-groups">
       <h1 class="page-header" align="center">{{title}}</h1>
       <p>Welcome to {{title}}</p><br>
-      Click the group member if you wish to remove from your group.<br>
 
 			{{#each groups}}
-        <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal fade" id="{{@key}}" role="dialog">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -49,11 +48,11 @@
                   </div>
 
                   <div class="modal-body">
-                    Are you sure you want to remove <b>{{name}}</b> from your group?
+                    Are you sure you want to leave this <b>{{name}}</b> group?
                   </div>
 
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="removeMember" data-dismiss="modal" aria-label="Close">Yes</button>
+                    <button type="button" class="btn btn-default" id="leaveGroup" onclick="leaveGroup('{{@key}}')" data-dismiss="modal" aria-label="Close">Yes</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">No</button>
                   </div>
               </div>
@@ -61,15 +60,16 @@
           </div>
 
 	      <div class="row">
-	        <div class="thumbnail">
-	          <div class="caption">
-	            <div class="well">
-	              <p>{{@key}}</p>
-								{{#each this}}
-									<a id="groupMember" data-toggle="modal" data-target="#myModal">{{name}}</a>
-								{{/each}}
-	            </div>
-	          </div>
+	        <div class="panel panel-default">
+            <div class="panel-heading">
+              <p><h3 class="panel-title">{{name}}</h3></p>
+            </div>
+            <div class="panel-body">
+							{{#each members}}
+							  <p><a id="groupMember">{{name}} </a></p>
+						  {{/each}}
+              <button type="button" class="btn btn-default" id="leaveGroupBtn" data-toggle="modal" data-target="#{{@key}}">Leave group</button>
+            </div>
 	        </div>
 	      </div>
 			{{/each}}

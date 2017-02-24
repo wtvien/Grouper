@@ -4,12 +4,14 @@ exports.view = function(req, res) {
   var user = data.students[0];
 
   var groups = {};
-  for (let groupId in user.groups) {
-    groups[groupId] = [];
-    for (let studentId of user.groups[groupId]) {
+  for (let courseId in user.groups) {
+    groups[courseId] = { members : [] };
+    for (let studentId of user.groups[courseId]) {
       let student = data.students.find(function(s) { return s.id === studentId; });
-      groups[groupId].push(student);
+      groups[courseId].members.push(student);
     }
+    var course = data.courses.find(function(c) { return c.id === courseId });
+    groups[courseId].name = course.name;
   }
 
   res.render('my-groups', {
@@ -17,4 +19,16 @@ exports.view = function(req, res) {
     name : user.name,
     groups : groups
    });
+};
+
+exports.leaveGroup = function(req, res) {
+  var courseId = req.body.courseId;
+  var user = data.students[0];
+  for (let studentId of user.groups[courseId]) {
+    let student = data.students.find(function(s) { return s.id === studentId });
+    let otherGroup = student.groups[courseId];
+    otherGroup.splice(otherGroup.indexOf(user.id, 1));
+  }
+  user.groups[courseId] = [];
+  res.redirect('/my-groups');
 };
