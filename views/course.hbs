@@ -53,15 +53,19 @@
         </select>
       <div class="row placeholders" id="peer-list">
         {{#each peers}}
-        <div class="col-xs-12 col-sm-6 col-md-4 placeholder NULL {{year}} {{location}}">
-          <div class="center-block panel panel-default course-panel">
-            <div class="panel-heading">
-              <a href={{url}}><h3 class="panel-title">{{name}}</h3></a>
+        <div class="media placeholder NULL {{year}} {{location}}">
+            <div class="media-left">
+              <a href={{url}}><img class="media-object" src="/images/{{avatar}}" width="150"></a>
             </div>
 
-            <div class="panel-body">
+            <div class="media-body">
+              <a href={{url}}><h3 class="media-heading">{{name}}</h3></a>
 							<span class="text-muted">Looking for <b>{{groupStatus}}</b> more group member(s)</span><br>
-                    
+              
+              <p><label for="inputMajor" class="control-label">Major:</label> {{major}} <br>
+              <label for="inputYear" class="control-label">Year:</label> {{year}}<br>
+              <label for="inputLocation" class="control-label">Location:</label> {{location}}</p>
+              <!--
               <button type="button" class ="btn btn-default" data-toggle="modal" data-target="#{{id}}">Preview</button>
 
               <div class="modal fade" id="{{id}}" role="dialog">
@@ -84,10 +88,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
-
-            </div>
-
+              </div> !-->
           </div>
         </div>
         {{/each}}

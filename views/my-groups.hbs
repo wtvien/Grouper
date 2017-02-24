@@ -60,15 +60,16 @@
           </div>
 
 	      <div class="row">
-	        <div class="thumbnail">
-	          <div class="caption">
-              <p><b>{{@key}}</b>
-              <button type="button" class="btn btn-default" id="leaveGroupBtn" data-toggle="modal" data-target="#{{@key}}">Leave group</button>
-              </p>
+	        <div class="panel panel-default">
+            <div class="panel-heading">
+              <p><h3 class="panel-title">{{@key}}</h3></p>
+            </div>
+            <div class="panel-body">
 							{{#each this}}
-							  <a id="groupMember">{{name}} </a>
+							  <p><a id="groupMember">{{name}} </a></p>
 						  {{/each}}
-	          </div>
+              <button type="button" class="btn btn-default" id="leaveGroupBtn" data-toggle="modal" data-target="#leaveGroup">Leave group</button>
+            </div>
 	        </div>
 	      </div>
 			{{/each}}
