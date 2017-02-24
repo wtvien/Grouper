@@ -8,9 +8,8 @@ function removeCourse(result) {
   var courses = result.courses;
   for (let c of courses) {
     $('#removeBtn'+c.modalID).click(function() {
-  	  console.log("clicked");
       $('#panel'+c.modalID).remove();
-      console.log("removed");
+      $.post('/index/remove-course', { id : c.id }, function() { location.reload(); });
     });
   }
 

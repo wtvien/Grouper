@@ -18,3 +18,7 @@ exports.view = function(req, res) {
     groups : groups
    });
 };
+
+exports.leaveGroup = function(req, res) {
+
+};
