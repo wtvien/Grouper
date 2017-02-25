@@ -2,13 +2,21 @@ var data = require('../data.json');
 
 exports.view = function(req, res) {
   var courseId = req.params.courseId;
+  var course = data.courses.find(function(c) { return c.id === courseId; });
+
   var peerId = req.params.peerId;
-  var peer = data.students.find(function(s) { return s.id === peerId});
+  var peer = data.students.find(function(s) { return s.id === peerId; });
 
   var days = [];
   for (let day in peer.availability) {
     if (peer.availability[day].length > 0)
       days.push({ day : day, from : peer.availability[day][0], to : peer.availability[day][1] });
+  }
+
+  var members = [];
+  for (let studentId of peer.groups[courseId]) {
+    let member = data.students.find(function(s) { return s.id === studentId; });
+    members.push(member);
   }
 
   res.render('peer', {
@@ -23,7 +31,9 @@ exports.view = function(req, res) {
     bio : peer.bio,
     roles : peer.roles,
     mailto : 'mailto:' + peer.email,
+    members : members,
     courseId : courseId,
+    courseName : course.name,
     courseUrl : encodeURI('/course/' + courseId)
   });
 };
