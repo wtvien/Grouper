@@ -12,7 +12,8 @@ exports.view = function(req, res) {
     if (studentId === user.id)
       continue;
     let student = data.students.find(function(s) { return s.id === studentId; });
-    if (student.groups[courseId].length + 1 === course.groupSize)
+    if (student.groups[courseId].length + 1 === course.groupSize ||
+      student.groups[courseId].indexOf(user.id) !== -1)
       continue;
     let peer = {
       id : student.id,
