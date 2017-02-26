@@ -65,26 +65,28 @@
         </div>
         <div class="row">
           <div class="col-sm-4">
-            <b>Tentative schedule</b>
+            <b>Tentative schedule:</b> Input your availability.
             {{#each days}}
             <div class="form-group">
               <label class="col-sm-2 control-label">{{day}}</label>
               <div class="col-sm-4">
-                <input name="{{day}}From" class="form-control" type="text" value="{{from}}">
+                <!-- <input name="{{day}}From" class="form-control" type="text" value="{{from}}"> -->
+                <select id="{{day}}inputFrom" name="{{day}}From" class="form-control"></select>
               </div>
               <label class="col-sm-2 control-label">to</label>
               <div class="col-sm-4">
-                <input name="{{day}}To" class="form-control" type="text" value="{{to}}">
+                <!--<input name="{{day}}To" class="form-control" type="text" value="{{to}}"> -->
+                <select id="{{day}}inputTo" name="{{day}}To" class="form-control"></select>
               </div>
             </div>
             {{/each}}
           </div>
           <div class="col-sm-8">
             <label for="inputBio" class="control-label">Personal Bio</label>
-            <textarea id="inputBio" name="bio" class="form-control" form="profileForm" rows="5">{{bio}}</textarea>
+            <textarea id="inputBio" name="bio" class="form-control" form="profileForm" rows="5" placeholder="Write a little about yourself.">{{bio}}</textarea>
             <br>
             <label for="inputRoles" class="control-label">Team Roles</label>
-            <textarea id="inputRoles" name="roles" class="form-control" form="profileForm" rows="5">{{roles}}</textarea>
+            <textarea id="inputRoles" name="roles" class="form-control" form="profileForm" rows="5" placeholder="What are you good at?">{{roles}}</textarea>
           </div>
         </div>
         <div class="row">

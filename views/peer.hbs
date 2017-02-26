@@ -35,7 +35,7 @@
       </div>
     </nav>
 
-		<h1 class="page-header">{{courseName}}</h1>
+		<h1 class="page-header" align="center">{{courseName}}</h1>
 
     <div class="peer">
       <div class="row">
@@ -62,7 +62,7 @@
 
       <div class="row">
         <div class="col-times">
-            <b>Tentative schedule</b>
+            <b>Tentative schedule:</b>
             {{#each days}}
             <div class="form-group">
               <label>{{day}}</label> {{from}}
@@ -89,7 +89,11 @@
           </div>
           <div class="panel-body" id="currentGroup">
 						{{#each members}}
-						  <p><a href="{{url}}" id="groupMember">{{name}}</a></p>
+              {{#if name}} 
+						    <p><a href="{{url}}" id="groupMember">{{name}}</a></p>
+              {{else}}
+                <h4>No group members!</h4>
+              {{/if}}
 					  {{/each}}
           </div>
         </div>

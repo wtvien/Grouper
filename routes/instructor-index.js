@@ -19,7 +19,7 @@ exports.view = function(req, res) {
 
 exports.addCourse = function(req, res) { 
 	var user = data.instructors[0];
-
+  //TO-DO: add new course using user input
 	var newCourse = {
       "id" : "jkl",
       "name" : "CSE 190",
@@ -29,15 +29,13 @@ exports.addCourse = function(req, res) { 
     };
 
 	user.myCourses[newCourse.id] = [];
-	// user.invites[newCourse.id] = [];
 
 	res.redirect('/instructor-index');
  };
 
 exports.removeCourse = function(req, res) {
   var courseId = req.body.id;
-  var user = data.students[0];
-  delete user.groups[courseId];
-  delete user.invites[courseId];
+  var user = data.instructors[0];
+  delete user.myCourses[courseId];
   res.redirect('/instructor-index');
 };

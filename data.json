@@ -23,8 +23,8 @@
         "Sat" : [],
         "Sun" : []
       },
-      "bio" : "Write a little about yourself.",
-      "roles" : "What are you good at?"
+      "bio" : "",
+      "roles" : ""
     },
     {
       "id" : "123",
