@@ -299,5 +299,14 @@
       "groupSize" : 2,
       "students" : ["123", "456", "789", "111", "222", "333", "444", "555", "666"]
     }
+  ],
+  "instructors" : [
+    {
+      "name" : "Scott Klemmer",
+      "email" : "prof@ucsd.edu",
+      "myCourses" : {
+        "abc" : []
+      }
+    }
   ]
 }

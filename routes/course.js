@@ -31,6 +31,7 @@ exports.view = function(req, res) {
   }
   res.render('course', {
     title : course.name,
+    groupSize : course.groupSize,
     peers : peers
    });
 };
