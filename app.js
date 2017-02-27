@@ -10,6 +10,7 @@ var upload = multer({ dest: 'public/images' });
 
 var signin = require('./routes/signin');
 var index = require('./routes/index');
+var instructorIndex = require('./routes/instructor-index');
 var myProfile = require('./routes/my-profile');
 var myGroups = require('./routes/my-groups');
 var course = require('./routes/course');
@@ -35,6 +36,9 @@ app.post('/register', signin.registerUser);
 app.get('/index', index.view);
 app.post('/index/add-course', index.addCourse);
 app.post('/index/remove-course', index.removeCourse);
+app.get('/instructor-index', instructorIndex.view);
+app.post('/instructor-index/add-course', instructorIndex.addCourse);
+app.post('/instructor-index/remove-course', instructorIndex.removeCourse);
 app.get('/my-profile', myProfile.view);
 app.post('/my-profile', upload.single('avatar'), myProfile.updateProfile);
 app.get('/my-groups', myGroups.view);

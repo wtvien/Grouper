@@ -27,8 +27,8 @@ exports.leaveGroup = function(req, res) {
   var user = data.students[0];
   for (let studentId of user.groups[courseId]) {
     let student = data.students.find(function(s) { return s.id === studentId });
-    let otherGroup = student.groups[courseId];
-    otherGroup.splice(otherGroup.indexOf(user.id, 1));
+    let studentGroup = student.groups[courseId];
+    studentGroup.splice(studentGroup.indexOf(user.id), 1);
   }
   user.groups[courseId] = [];
   res.redirect('/my-groups');

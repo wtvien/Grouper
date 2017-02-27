@@ -23,8 +23,8 @@
         "Sat" : [],
         "Sun" : []
       },
-      "bio" : "Write a little about yourself.",
-      "roles" : "What are you good at?"
+      "bio" : "",
+      "roles" : ""
     },
     {
       "id" : "123",
@@ -275,7 +275,7 @@
       "id" : "abc",
       "name" : "CSE 170",
       "title" : "Interaction Design",
-      "groupSize" : 2,
+      "groupSize" : 6,
       "students" : ["000", "123", "456", "789", "111", "222", "333", "444", "555", "666"]
     },
     {
@@ -298,6 +298,15 @@
       "title" : "Entrepreneurship",
       "groupSize" : 2,
       "students" : ["123", "456", "789", "111", "222", "333", "444", "555", "666"]
+    }
+  ],
+  "instructors" : [
+    {
+      "name" : "Scott Klemmer",
+      "email" : "prof@ucsd.edu",
+      "myCourses" : {
+        "abc" : []
+      }
     }
   ]
 }

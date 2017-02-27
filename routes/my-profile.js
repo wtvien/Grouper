@@ -26,8 +26,9 @@ exports.updateProfile = function(req, res) {
   user.year = req.body.year;
   user.location = req.body.location;
   for (let day in user.availability)
-    user.availability[day] = [req.body[day + "From"], req.body[day + "To"]];
+    user.availability[day] = [req.body[day+'From'], req.body[day+'To']];
   user.bio = req.body.bio;
   user.roles = req.body.roles;
+
   res.redirect('my-profile');
 };

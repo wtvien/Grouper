@@ -35,9 +35,9 @@
       </div>
     </nav>
 
-    <div class="peer">
-      <form id="profileForm" class="form-horizontal">
+		<h1 class="page-header" align="center">{{courseName}}</h1>
 
+    <div class="peer">
       <div class="row">
         <div class="col-sm-4">
           <img src="/images/{{avatar}}" class="img-responsive">
@@ -62,6 +62,7 @@
 
       <div class="row">
         <div class="col-times">
+            <b>Tentative schedule:</b>
             {{#each days}}
             <div class="form-group">
               <label>{{day}}</label> {{from}}
@@ -79,32 +80,49 @@
 							{{roles}}
 						</div>
         </div>
-    </div>
+    	</div>
 
-    <div class="row">
-      <center><a href="{{mailto}}" class="btn btn-default" role="button">Email {{name}}</a>
-	      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="joinGroup()">Join group</button>
-	      <div class="modal fade" id="myModal" role="dialog">
-	        <div class="modal-dialog" role="document">
-	          <div class="modal-content">
-	            <div class="modal-header">
-	              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	            </div>
+			<div class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <p><h3 class="panel-title">Current Group</h3></p>
+          </div>
+          <div class="panel-body" id="currentGroup">
+						{{#each members}}
+              {{#if name}} 
+						    <p><a href="{{url}}" id="groupMember">{{name}}</a></p>
+              {{else}}
+                <h4>No group members!</h4>
+              {{/if}}
+					  {{/each}}
+          </div>
+        </div>
+      </div>
 
-	            <div class="modal-body">
-	              You've joined <b>{{name}}</b>'s group! Check <i>My Groups</i> to view your groups!
-	            </div>
+    	<div class="row">
+	      <center><a href="{{mailto}}" class="btn btn-default" role="button">Email {{name}}</a>
+		      <button type="button" class="btn btn-primary" id="joinGroupBtn" data-toggle="modal" data-target="#myModal" onclick="joinGroup()">Join {{name}}'s group</button>
+		      <div class="modal fade" id="myModal" role="dialog">
+		        <div class="modal-dialog" role="document">
+		          <div class="modal-content">
+		            <div class="modal-header">
+		              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		            </div>
 
-	            <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-    	</center>
-      <br><a href={{courseUrl}}>Back</a>
-    </div>
-    </form>
-  </div>
+		            <div class="modal-body">
+		              You've joined <b>{{name}}</b>'s group! Check <i>My Groups</i> to view your groups!
+		            </div>
+
+		            <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+	    	</center>
+	      <br><a href={{courseUrl}}>Back</a>
+	    </div>
+	  </div>
+	</div>
 
 	<script>var courseId = '{{courseId}}', peerId = '{{id}}'</script>
   <script src="/js/jquery-3.1.1.min.js"></script>
