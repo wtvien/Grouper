@@ -275,7 +275,7 @@
       "id" : "abc",
       "name" : "CSE 170",
       "title" : "Interaction Design",
-      "groupSize" : 6,
+      "groupSize" : 2,
       "students" : ["000", "123", "456", "789", "111", "222", "333", "444", "555", "666"]
     },
     {

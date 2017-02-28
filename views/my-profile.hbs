@@ -8,6 +8,7 @@
 
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/bootstrap-timepicker.min.css" rel="stylesheet"/>
   <link href="/css/style.css" rel="stylesheet">
 </head>
 
@@ -67,16 +68,20 @@
           <div class="col-sm-4">
             <b>Tentative schedule:</b> Input your availability.
             {{#each days}}
-            <div class="form-group">
-              <label class="col-sm-2 control-label">{{day}}</label>
-              <div class="col-sm-4">
-                <!-- <input name="{{day}}From" class="form-control" type="text" value="{{from}}"> -->
-                <select id="{{day}}inputFrom" name="{{day}}From" class="form-control"></select>
+            <div class="row form-group">
+              <label class="col-sm-12">{{day}}</label>
+              <div class="col-sm-5">
+                <div class="input-group bootstrap-timepicker timepicker">
+                  <input id="input{{day}}From" name="{{day}}From" class="form-control" type="text" value="{{from}}">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                </div>
               </div>
-              <label class="col-sm-2 control-label">to</label>
-              <div class="col-sm-4">
-                <!--<input name="{{day}}To" class="form-control" type="text" value="{{to}}"> -->
-                <select id="{{day}}inputTo" name="{{day}}To" class="form-control"></select>
+              <label class="col-sm-2 control-label" style="text-align: center;">to</label>
+              <div class="col-sm-5">
+                <div class="input-group bootstrap-timepicker timepicker">
+                  <input id="input{{day}}To" name="{{day}}To" class="form-control" type="text" value="{{to}}">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                </div>
               </div>
             </div>
             {{/each}}
@@ -100,6 +105,7 @@
 
   <script src="/js/jquery-3.1.1.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-timepicker.min.js"></script>
   <script src="/js/my-profile.js"></script>
 </body>
 </html>
