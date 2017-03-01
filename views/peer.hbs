@@ -101,8 +101,10 @@
 
     	<div class="row">
 	      <center><a href="{{mailto}}" class="btn btn-default" role="button">Email {{name}}</a>
-		      <button type="button" class="btn btn-primary" id="joinGroupBtn" data-toggle="modal" data-target="#myModal" onclick="joinGroup()">Join {{name}}'s group</button>
-		      <div class="modal fade" id="myModal" role="dialog">
+		      <span data-toggle="tooltip" data-placement="right" title="If you are not in a group, you will be joining {{name}}'s group. If you have group members, you will be merging.">
+            <button type="button" class="btn btn-primary" id="joinGroupBtn" data-toggle="modal" data-target="#joinedGroupModal" onclick="joinGroup()" >Join {{name}}'s group</button>
+          </span>
+		      <div class="modal fade" id="joinedGroupModal" role="dialog">
 		        <div class="modal-dialog" role="document">
 		          <div class="modal-content">
 		            <div class="modal-header">

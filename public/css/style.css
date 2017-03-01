@@ -81,3 +81,7 @@ body {
 .edit-btn {
   margin-top: 30px;
 }
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('[data-toggle="tooltip"]').tooltip();
   updateJoinButton();
   $('#joinGroupBtn').click(updateJoinButton);
 });
@@ -15,6 +16,7 @@ function updateJoinButton() {
       userGroup.length + peerGroup.length + 1 >= course.groupSize)
       $('#joinGroupBtn').attr('disabled', true);
   });
+  $('[data-toggle="tooltip"]').tooltip('hide');
 }
 
 function joinGroup() {
