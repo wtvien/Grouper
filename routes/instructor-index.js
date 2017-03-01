@@ -19,13 +19,14 @@ exports.view = function(req, res) {
 
 exports.addCourse = function(req, res) { 
 	var user = data.instructors[0];
-  //TO-DO: add new course using user input
+  //TO-DO: add new course using user input??
 	var newCourse = {
-      "id" : "jkl",
-      "name" : "CSE 190",
-      "title" : "Entrepreneurship",
+      "id" : "mno",
+      "code" : "9g8zbW8a",
+      "name" : "COGS 199",
+      "title" : "Special Project",
       "groupSize" : 2,
-      "students" : ["000", "123", "456", "789", "111", "222", "333", "444", "555", "666"]
+      "students" : []
     };
 
 	user.myCourses[newCourse.id] = [];
