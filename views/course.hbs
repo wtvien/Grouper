@@ -55,14 +55,14 @@
       <div class="row" id="peer-list">
         {{#each peers}}
         <div class="media placeholder NULL {{year}} {{location}}">
-            <div class="media-left">
-              <a href={{url}}><img class="media-object" src="/images/{{avatar}}" width="120"></a>
+            <div class="col-xs-4 col-sm-2 media-left">
+              <a href={{url}}><img class="media-object img-responsive" src="/images/{{avatar}}"></a>
             </div>
 
             <div class="media-body">
               <a href={{url}}><h3 class="media-heading">{{name}}</h3></a>
 							<span class="text-muted">Looking for <b>{{groupStatus}}</b> more group member(s)</span><br>
-              
+
               <label for="inputMajor" class="control-label">Major:</label> {{major}} <br>
               <label for="inputYear" class="control-label">Year:</label> {{year}}<br>
               <label for="inputLocation" class="control-label">Location:</label> {{location}}
