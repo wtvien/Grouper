@@ -27,7 +27,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="/my-profile">My Profile<span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="/-profile">My Profile<span class="sr-only">(current)</span></a></li>
             <li><a href="/my-groups">My Groups</a></li>
             <li><a href="/">Sign Out</a></li>
           </ul>
@@ -39,8 +39,8 @@
       <form id="profileForm" class="form-horizontal" enctype="multipart/form-data" method="POST", action="/my-profile">
         <div class="row">
           <div class="col-sm-4">
-            <input class="img-responsive" type="image" src="/images/{{avatar}}">
-            <input name="avatar" type="file" accept="image/*" style="display: none">
+            <input class="img-responsive edit-image" type="image" src="/images/{{avatar}}">
+            <input id="img-selector" name="avatar" type="file" accept="image/*" style="display: none">
           </div>
           <div class="col-sm-8">
             <h1 class="page-header">{{name}}</h1>
@@ -106,6 +106,6 @@
   <script src="/js/jquery-3.1.1.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="js/bootstrap-timepicker.min.js"></script>
-  <script src="/js/my-profile.js"></script>
+  <script src="/js/edit-profile.js"></script>
 </body>
 </html>
