@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('[data-toggle="tooltip"]').tooltip();
   $.get('/data/', updateLeaveButtons);
 });
 

@@ -1,6 +1,7 @@
 $(document).ready(initializePage());
 
 function initializePage() {
+  $('[data-toggle="tooltip"]').tooltip();
   $.get('/data', removeCourseHandlers);
  }
 
