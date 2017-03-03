@@ -273,7 +273,7 @@
   "courses" : [
     {
       "id" : "abc",
-      "code" : "tjmaDV55",
+      "pw" : "tjmaDV55",
       "name" : "CSE 170",
       "title" : "Interaction Design",
       "groupSize" : 3,
@@ -281,7 +281,7 @@
     },
     {
       "id" : "def",
-      "code" : "8LiXuFc4",
+      "pw" : "8LiXuFc4",
       "name" : "CSE 110",
       "title" : "Software Engineering",
       "groupSize" : 8,
@@ -289,7 +289,7 @@
     },
     {
       "id" : "ghi",
-      "code" : "3dKYIV0l",
+      "pw" : "3dKYIV0l",
       "name" : "CSE 141L",
       "title" : "Project in Computer Architecture",
       "groupSize" : 2,
@@ -297,7 +297,7 @@
     },
     {
       "id" : "jkl",
-      "code" : "12345",
+      "pw" : "f1XLCA2R",
       "name" : "CSE 190",
       "title" : "Entrepreneurship",
       "groupSize" : 5,
@@ -305,7 +305,7 @@
     },
     {
       "id" : "mno",
-      "code" : "9g8zbW8a",
+      "pw" : "9g8zbW8a",
       "name" : "COGS 199",
       "title" : "Special Project",
       "groupSize" : 2,
