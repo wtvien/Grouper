@@ -276,6 +276,7 @@
       "pw" : "tjmaDV55",
       "name" : "CSE 170",
       "title" : "Interaction Design",
+      "instructor" : "Scott Klemmer",
       "groupSize" : 3,
       "students" : ["000", "123", "456", "789", "111", "222", "333", "444", "555", "666"]
     },
@@ -308,6 +309,7 @@
       "pw" : "9g8zbW8a",
       "name" : "COGS 199",
       "title" : "Special Project",
+      "instructor" : "Scott Klemmer",
       "groupSize" : 2,
       "students" : []
     }
