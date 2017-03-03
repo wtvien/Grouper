@@ -70,8 +70,9 @@
     <div class="profile">
       <form id="profileForm" class="form-horizontal" enctype="multipart/form-data" method="POST", action="/my-profile">
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-4 img-upload">
             <input class="img-responsive edit-image" type="image" src="/images/{{avatar}}">
+            <p class="img-title">Upload Photo</p>
             <input id="img-selector" name="avatar" type="file" accept="image/*" style="display: none">
           </div>
           <div class="col-sm-8">
@@ -97,7 +98,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-4 schedule">
             <b>Tentative schedule:</b> Input your availability.
             {{#each days}}
             <div class="row form-group">
