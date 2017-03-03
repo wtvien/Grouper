@@ -52,11 +52,11 @@
 
           <div class="modal-body">
             <ul>
-              <li>To get started, add a course using the course code provided by your instructor.</li>
+              <li>To get started, add a course using the course password provided by your instructor.</li>
               <li> Under <b>My Account</b> in the top right, go to <b>My Profile</b> to fill in your profile.</li>
               <li>To see your peers, click the <u>View course</u> button. You can filter by <i>Name</i>, <i>Year</i>, or <i>Location</i>. Click on a peer who seems like a good fit and is looking for more group member(s).</li>
-              <li>To form a group with a peer, click the <u>Join <i>Name's</i> Group</u> button at the bottom of the profile.  Once you join a group, you cannot pick and choose who to remove - you can only leave that group.</li>
-              <li>Under <b>My Account</b> in the top right, go to <b>My Groups</b> to view your groups. If you choose to <u>Leave group</u>, you will be removing yourself from that group. </li>
+              <li>To form a group with a peer, click the <u>Add to My Group</u> button at the bottom of the profile.  Once you have added this person to your group, you cannot remove this person - you can only leave that group.</li>
+              <li>Under <b>My Account</b> in the top right, go to <b>My Groups</b> to view your groups. If you choose to <u>Leave Group</u>, you will be removing yourself from that group. </li>
             </ul>
           </div>
 
@@ -70,8 +70,9 @@
     <div class="profile">
       <form id="profileForm" class="form-horizontal" enctype="multipart/form-data" method="POST", action="/my-profile">
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-4 img-upload">
             <input class="img-responsive edit-image" type="image" src="/images/{{avatar}}">
+            <p class="img-title">Upload Photo</p>
             <input id="img-selector" name="avatar" type="file" accept="image/*" style="display: none">
           </div>
           <div class="col-sm-8">
@@ -97,7 +98,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-8 col-sm-6 col-md-4">
+          <div class="col-xs-8 col-sm-6 col-md-4 schedule">
             <b>Tentative schedule:</b> Input your availability.
             {{#each days}}
             <div class="row form-group">

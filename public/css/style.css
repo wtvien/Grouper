@@ -93,5 +93,24 @@ body {
 }
 
 .tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-title {
+  float: left;
+}
+
+.img-title {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.close {
+  float: right;
+}
+
+.schedule {
+  margin-top: 15px;
+}
