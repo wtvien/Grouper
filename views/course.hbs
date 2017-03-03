@@ -53,14 +53,14 @@
           <div class="modal-body">
             <ul>
               <li>To get started, add a course using the course code provided by your instructor.</li>
-              <li> Under <b>My Account</b> in the top right, go to <b>My Profile</b> to fill in your profile.</li> 
+              <li> Under <b>My Account</b> in the top right, go to <b>My Profile</b> to fill in your profile.</li>
               <li>To see your peers, click the <u>View course</u> button. You can filter by <i>Name</i>, <i>Year</i>, or <i>Location</i>. Click on a peer who seems like a good fit and is looking for more group member(s).</li>
               <li>To form a group with a peer, click the <u>Join <i>Name's</i> Group</u> button at the bottom of the profile.  Once you join a group, you cannot pick and choose who to remove - you can only leave that group.</li>
               <li>Under <b>My Account</b> in the top right, go to <b>My Groups</b> to view your groups. If you choose to <u>Leave group</u>, you will be removing yourself from that group. </li>
             </ul>
           </div>
 
-          <div class="modal-footer"> 
+          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
           </div>
         </div>
@@ -84,22 +84,29 @@
           <option value="Off-campus">Off-campus</option>
         </select>
         <input type="text" class="form-control search-peer" placeholder="Filter by name">
-      <div class="row" id="peer-list">
+      <div id="peer-list">
         {{#each peers}}
         <div class="media placeholder NULL {{year}} {{location}}">
-            <div class="col-xs-4 col-sm-2 media-left">
-              <a href={{url}}><img class="media-object img-responsive" src="/images/{{avatar}}"></a>
-            </div>
-
-            <div class="media-body">
-              <a href={{url}}><h3 class="media-heading">{{name}}</h3></a>
-							<span class="text-muted">Looking for <b>{{groupStatus}}</b> more group member(s)</span><br>
-
-              <label for="inputMajor" class="control-label">Major:</label> {{major}} <br>
-              <label for="inputYear" class="control-label">Year:</label> {{year}}<br>
-              <label for="inputLocation" class="control-label">Location:</label> {{location}}
-
+          <div class="col-xs-4 col-sm-2 media-left">
+            <img class="media-object img-responsive" src="/images/{{avatar}}">
           </div>
+
+          <div class="media-body">
+						{{#if @root.view_A}}
+            	<a href={{url}}><h3 class="media-heading">{{name}}</h3></a>
+						{{else}}
+							<h3 class="media-heading">{{name}}</h3>
+						{{/if}}
+						<span class="text-muted">Looking for <b>{{groupStatus}}</b> more group member(s)</span><br>
+
+            <label for="inputMajor" class="control-label">Major:</label> {{major}} <br>
+            <label for="inputYear" class="control-label">Year:</label> {{year}} <br>
+            <label for="inputLocation" class="control-label">Location:</label> {{location}} <br>
+
+						{{#unless @root.view_A}}
+							<a href={{url}} class="btn btn-default" >View Profile</a>
+						{{/unless}}
+        	</div>
         </div>
         {{/each}}
       </div>
