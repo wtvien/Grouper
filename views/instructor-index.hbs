@@ -44,7 +44,8 @@
 
           <div class="modal-body">
             <ul>
-            	<li>To get started, create a course by inputting the <i>Course Code</i>, <i>Course Title</i>, and <i>Group Size</i>. the <i>Group Size</i> </li>
+            	<li>To get started, create a course by inputting the <i>Course Code</i>, <i>Course Title</i>, and <i>Group Size</i>. The <i>Group Size</i> is the number of students you want in each group.</li>
+            	<li>Give the 
             </ul>
           </div>
 
@@ -90,7 +91,7 @@
 							<a href={{url}}><h3 class="panel-title">{{name}}</h3></a>
 						</div>
 						<div class="panel-body">
-							<p><span class="text-muted">{{title}}</span><br><b>Course code</b>: {{code}}</p>
+							<p><span class="text-muted">{{title}}</span><br><b>Course password</b>: {{pw}</p>
 							<a href={{url}} class ="btn btn-primary placeholder" role="button">View course</a><br>
 							<button type="button" class ="btn btn-default btn-xs" data-toggle="modal" data-target="#{{id}}">Remove course</button>
 						</div>
@@ -108,8 +109,7 @@
 	      	<input type="text" placeholder="Special Project" id="courseName" class="form-control" required><br>
 	      	<label for="inputGroupSize" class="col-sm-2 control-label">Group Size</label>
 	      	<input type="text" placeholder="2" id="groupSize" class="form-control" required><br>
-	      	<input type="submit" value="Submit" data-toggle="tooltip" data-placement="right" title="A course code will be generated. Give this code to your students to add the course.">
-	      	<!-- pop up modal with randomly generated course code -->
+	      	<input type="submit" value="Submit" data-toggle="tooltip" data-placement="right" title="A course password will be generated. Give this code to your students to add the course.">
 	      </form>
 	    </div>
 
