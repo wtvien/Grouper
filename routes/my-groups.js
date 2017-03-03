@@ -13,6 +13,7 @@ exports.view = function(req, res) {
     }
     var course = data.courses.find(function(c) { return c.id === courseId });
     groups[courseId].name = course.name;
+    groups[courseId].courseUrl = '/course/' + courseId;
   }
 
   res.render('my-groups', {

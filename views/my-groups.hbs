@@ -53,20 +53,20 @@
           <div class="modal-body">
             <ul>
               <li>To get started, add a course using the course code provided by your instructor.</li>
-              <li> Under <b>My Account</b> in the top right, go to <b>My Profile</b> to fill in your profile.</li> 
+              <li> Under <b>My Account</b> in the top right, go to <b>My Profile</b> to fill in your profile.</li>
               <li>To see your peers, click the <u>View course</u> button. You can filter by <i>Name</i>, <i>Year</i>, or <i>Location</i>. Click on a peer who seems like a good fit and is looking for more group member(s).</li>
               <li>To form a group with a peer, click the <u>Add to My Group</u> button at the bottom of the profile.  Once you have added this person to your group, you cannot remove this person - you can only leave that group.</li>
               <li>Under <b>My Account</b> in the top right, go to <b>My Groups</b> to view your groups. If you choose to <u>Leave Group</u>, you will be removing yourself from that group. </li>
             </ul>
           </div>
 
-          <div class="modal-footer"> 
+          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div class="my-groups">
       <h1 class="page-header" align="center">{{title}}</h1>
       <p>Welcome to {{title}}</p><br>
@@ -94,7 +94,7 @@
 	      <div class="row">
 	        <div class="panel panel-default">
             <div class="panel-heading">
-              <p><h3 class="panel-title">{{name}}</h3></p>
+              <a href={{courseUrl}}><p><h3 class="panel-title">{{name}}</h3></p></a>
             </div>
             <div class="panel-body">
 							{{#each members}}
