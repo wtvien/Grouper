@@ -27,21 +27,43 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/">Settings</a></li>
+          	<li><a href="#" id="helpModalLink" data-toggle="modal" data-target="#helpModal">Help</a></li>
             <li><a href="/">Sign Out</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
+    <div class="modal fade" id="helpModal" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h4 class="modal-title">Help Documentation</h4>
+          </div>
+
+          <div class="modal-body">
+            <ul>
+            	<li>To get started, create a course by inputting the <i>Course Code</i>, <i>Course Title</i>, and <i>Group Size</i>. The <i>Group Size</i> is the number of students you want in each group.</li>
+            	<li>Give the course password to your students to add the course.</li>
+            </ul>
+          </div>
+
+          <div class="modal-footer"> 
+            <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 	<div class="home">
 	    <h1 class="page-header">Hello, {{name}}</h1>
+	    <!--<div class="row placeholders">
+	    	<h4 align="center">View an existing course</h4> Viewing a course will take you to student account view.
+	    </div> -->
 
 	    <div class="row placeholders">
-	    	<h4 align="center">View an existing course</h4>
-	    </div>
-
-	    <div class="row placeholders">
+	    	<h3 align="left">Winter 2017</h3>
 			{{#each courses}}
 				<div class="col-xs-12 col-sm-6 col-md-4 placeholder">
 					<div class="modal fade" id="{{id}}" role="dialog">
@@ -68,8 +90,8 @@
 							<a href={{url}}><h3 class="panel-title">{{name}}</h3></a>
 						</div>
 						<div class="panel-body">
-							<p><span class="text-muted">{{title}}</span></p>
-							<a href={{url}} class ="btn btn-primary placeholder" role="button">View course</a><br>
+							<p><span class="text-muted">{{title}}</span><br><b>Course password</b>: {{pw}}</p>
+							<!-- <a href={{url}} class ="btn btn-primary placeholder" role="button">View course</a><br> -->
 							<button type="button" class ="btn btn-default btn-xs" data-toggle="modal" data-target="#{{id}}">Remove course</button>
 						</div>
 					</div>
@@ -81,16 +103,18 @@
 	      <h4>Create a new course</h4>
 	      <form id="createCourseForm" method="post" action="/instructor-index/add-course">
 	      	<label for="inputCourseCode" class="col-sm-2 control-label">Course Code</label>
-	      	<input type="text" placeholder="CSE 170" id="courseCode" class="form-control" required><br>
+	      	<input type="text" placeholder="COGS 199" id="courseCode" class="form-control" required><br>
 	      	<label for="inputCourseName" class="col-sm-2 control-label">Course Title</label>
-	      	<input type="text" placeholder="Human-Computer Interaction Design" id="courseName" class="form-control" required><br>
+	      	<input type="text" placeholder="Special Project" id="courseName" class="form-control" required><br>
 	      	<label for="inputGroupSize" class="col-sm-2 control-label">Group Size</label>
-	      	<input type="text" placeholder="6" id="groupSize" class="form-control" required><br>
-	        <label for="inputStudents" class="col-sm-2 control-label">Students</label>
-	      	<input type="text" placeholder="Insert list of students' PIDs" id="students" class="form-control" required><br>
-	      	<input type="submit" value="Submit">
-	      	<!-- pop up modal with randomly generated course code -->
+	      	<input type="text" placeholder="2" id="groupSize" class="form-control" required><br>
+	      	<input type="submit" value="Submit" data-toggle="tooltip" data-placement="right" title="A course password will be generated. Give this code to your students to add the course.">
 	      </form>
+	    </div>
+
+	    <div class="row placeholders">
+	    	<h3 align="left">Past courses</h3>
+	    	You have no previous courses on Grouper.
 	    </div>
 
 	</div>
