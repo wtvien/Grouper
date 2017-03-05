@@ -5,13 +5,11 @@ $(document).ready(function() {
 	$('.search-peer').keyup(searchFilter);
 	$(window).scroll(backToTop);
 
-	$('#peerLink').click(function(e) {
-		e.preventDefault();
+	$('#'+url+'peerLink').click(function(e) {
 		ga("send", "event", "link", "click");
 	});
 
-	$('#peerBtn').click(function(e) {
-		e.preventDefault();
+	$('#'+url+'peerBtn').click(function(e) {
 		ga("send", "event", "button", "click");
 	});
 });
