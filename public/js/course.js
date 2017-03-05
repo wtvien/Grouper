@@ -4,6 +4,16 @@ $(document).ready(function() {
 	$('select').change(updatePeerList);	
 	$('.search-peer').keyup(searchFilter);
 	$(window).scroll(backToTop);
+
+	$('#peerLink').click(function(e) {
+		e.preventDefault();
+		ga("send", "event", "link", "click");
+	});
+
+	$('#peerBtn').click(function(e) {
+		e.preventDefault();
+		ga("send", "event", "button", "click");
+	});
 });
 
 function updatePeerList(e) {
