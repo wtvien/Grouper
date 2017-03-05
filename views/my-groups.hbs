@@ -12,64 +12,45 @@
 </head>
 
 <body>
+  {{> navigation}}
   <div class="container">
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/index">Grouper <span class="glyphicon glyphicon-home"></span></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/my-profile">My Profile</a></li>
-            <li class="active"><a href="/my-groups">My Groups<span class="sr-only">(current)</span></a></li>
-            <li><a href="/">Sign Out</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
     <div class="my-groups">
       <h1 class="page-header" align="center">{{title}}</h1>
       <p>Welcome to {{title}}</p><br>
-      Click the group member if you wish to remove from your group.<br>
 
 			{{#each groups}}
-        <div class="modal fade" id="myModal" role="dialog">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  </div>
+        <div class="modal fade" id="{{@key}}" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
 
-                  <div class="modal-body">
-                    Are you sure you want to remove <b>{{name}}</b> from your group?
-                  </div>
+              <div class="modal-body">
+                Are you sure you want to leave this <b>{{name}}</b> group?
+              </div>
 
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="removeMember" data-dismiss="modal" aria-label="Close">Yes</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">No</button>
-                  </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="leaveGroup" onclick="leaveGroup('{{@key}}')" data-dismiss="modal" aria-label="Close">Yes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">No</button>
               </div>
             </div>
           </div>
+        </div>
 
 	      <div class="row">
-	        <div class="thumbnail">
-	          <div class="caption">
-	            <div class="well">
-	              <p>{{@key}}</p>
-								{{#each this}}
-									<a id="groupMember" data-toggle="modal" data-target="#myModal">{{name}}</a>
-								{{/each}}
-	            </div>
-	          </div>
+	        <div class="panel panel-default">
+            <div class="panel-heading">
+              <a href={{courseUrl}}><p><h3 class="panel-title">{{name}}</h3></p></a>
+            </div>
+            <div class="panel-body">
+							{{#each members}}
+							  <p><a href="{{url}}" id="groupMember">{{name}} </a></p>
+						  {{/each}}
+              <span data-toggle="tooltip" data-placement="right" title="You will be removing yourself from this group.">
+                <button type="button" class="btn btn-default" id="leaveGroupBtn{{@key}}" data-toggle="modal" data-target="#{{@key}}" data-placement="right">Leave group</button>
+              </span>
+            </div>
 	        </div>
 	      </div>
 			{{/each}}

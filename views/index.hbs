@@ -12,97 +12,72 @@
 </head>
 
 <body>
+  {{> navigation}}
   <div class="container">
-
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/index">Grouper <span class="glyphicon glyphicon-home"></span></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/my-profile">My Profile</a></li>
-            <li><a href="/my-groups">My Groups</a></li>
-            <li><a href="/">Sign Out</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
 	<div class="home">
 	    <h1 class="page-header">Hello, {{name}}</h1>
 
 	    <div class="row placeholders">
-	      <h4>Add a course</h4>
-	      <p>Enter your course code provided by your professor.<p>
-	      <form id="addCourseForm" role="form" method="get" action="/addCourse">
-	      	<input type="text" placeholder="12345" name="addCourse">
-	      	<input type="submit" value="Submit">
-	      </form>
-	    </div>
-	    
-	    <div class="row placeholders">
-	    	<center><b>Pick a course from below to view peers.</b></center>
+	    	<h4 align="center">View an existing course</h4> Pick a course from below to view peers.
 	    </div>
 
 	    <div class="row placeholders">
-				{{#each courses}}
-	      <div class="col-xs-12 col-sm-6 col-md-4 placeholder">
-				<div class="modal fade" id="myModal" role="dialog">
-							<div class="modal-dialog" role="document">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-									</div>
+	    	<h3 align="left">Winter 2017</h3>
+			{{#each courses}}
+				<div class="col-xs-12 col-sm-6 col-md-4 placeholder">
+					<div class="modal fade" id="{{id}}" role="dialog">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								</div>
 
-									<div class="modal-body">
-										Are you sure you want to remove <b>{{id}}</b> from your list of courses?
-									</div>
+								<div class="modal-body">
+									Are you sure you want to remove <b>{{name}}</b> from your list of courses?
+								</div>
 
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" id="removeBtn" data-dismiss="modal" aria-label="Close">Yes</button>
-										<button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">No</button>
-									</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" id="removeBtn{{id}}" data-dismiss="modal" aria-label="Close">Yes</button>
+									<button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">No</button>
+								</div>
 							</div>
 						</div>
 					</div>
-			    <div class="center-block panel panel-default course-panel" id="panelid">
-				  <div class="panel-heading">
-				    <a href={{url}}><h3 class="panel-title">{{id}}</h3></a>
-				  </div>
 
+					<div class="center-block panel panel-default course-panel" id="panel{{id}}">
+						<div class="panel-heading">
+							<a href={{url}}><h3 class="panel-title">{{name}}</h3></a>
+						</div>
 						<div class="panel-body">
-				          <p><span class="text-muted">{{title}}</span></p>
-
-				          <button type="button" class ="btn btn-default" data-toggle="modal" data-target="#myModal">Remove course</button>
-
-
-
-					  </div>
-			    </div>
-	      </div>
-				{{/each}}
+							<p><span class="text-muted">{{title}}</span></p>
+							<a href={{url}} class ="btn btn-primary placeholder" role="button">View course</a><br>
+							<button type="button" class ="btn btn-default btn-xs" data-toggle="modal" data-target="#{{id}}">Remove course</button>
+						</div>
+					</div>
+		      	</div>
+			{{/each}}
 	    </div>
 
-	</div>
+<!--
+	    <div class="row placeholders">
+	      <h4>Add a course</h4>
+	      <p>Enter your course password provided by your instructor.<p>
+	      <form id="addCourseForm" role="form" method="post" action="/index/add-course">
+	      	<input type="text" placeholder="12345" name="courseId">
+	      	<input type="submit" value="Submit">
+	      </form>
+	    </div>
+-->
+	    <div class="row placeholders">
+	    	<h3 align="left">Past courses</h3>
+	    	You have no previous courses on Grouper.
+	    </div>
+	  </div>
   </div>
 
   <script src="/js/jquery-3.1.1.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-
-  <script>
-  	$(document).ready(function(){
-  		$("#removeBtn").click(function(){
-  			$("#panelid").remove();
-  		});
-  	});
-  </script>
+  <script src="/js/index.js"></script>
 
 </body>
 </html>

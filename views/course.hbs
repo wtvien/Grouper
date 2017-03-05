@@ -12,92 +12,71 @@
 </head>
 
 <body>
+  {{> navigation}}
   <div class="container">
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/index">Grouper <span class="glyphicon glyphicon-home"></span></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/my-profile">My Profile</a></li>
-            <li><a href="/my-groups">My Groups</a></li>
-            <li><a href="/">Sign Out</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
     <div class="course">
       <h1 class="page-header" align="center">{{title}}</h1>
-      <p>Welcome to {{title}}</p>
-        <select id="year-sel" name="year" class="filter-selectors">
-          <option value="NULL">Grade</option>
+      <p>Welcome to {{title}}! You can form groups of {{groupSize}}.</p>
+        <select id="year-sel" name="year" class="filter-selectors placeholder">
+          <option value="NULL">Year</option>
           <option value="1st">1st</option>
           <option value="2nd">2nd</option>
           <option value="3rd">3rd</option>
           <option value="4th">4th</option>
           <option value="5th+">5th+</option>
         </select>
-        <select id="location-sel" name="location" class="filter-selectors">
+        <select id="location-sel" name="location" class="filter-selectors placeholder">
           <option value="NULL">Location</option>
           <option value="On-campus">On-campus</option>
           <option value="Off-campus">Off-campus</option>
-        </select> 
-      <div class="row placeholders" id="peer-list">
+        </select>
+        <input type="text" class="form-control search-peer" placeholder="Filter by name">
+      <div id="peer-list">
         {{#each peers}}
-        <div class="col-xs-12 col-sm-6 col-md-4 placeholder NULL {{year}} {{location}}">
-          <div class="center-block panel panel-default course-panel">
-            <div class="panel-heading">
-              <a href={{url}}><h3 class="panel-title">{{name}}</h3></a>
-            </div>
-
-            <div class="panel-body">
-							<span class="text-muted">Looking for <b>{{groupStatus}}</b> more group member(s)</span><br>
-
-              <button type="button" class ="btn btn-default" data-toggle="modal" data-target="#{{id}}">Preview</button>
-
-              <div class="modal fade" id="{{id}}" role="dialog">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="myModalLabel">{{name}}</h4>
-                    </div>
-
-                    <div class="modal-body">
-                      <center><img src="http://lorempixel.com/200/200/people" class="img-responsive"></center>
-                      <p><label for="inputMajor" class="control-label">Major:</label> {{major}} <br>
-                      <label for="inputYear" class="control-label">Year:</label> {{year}}<br>
-                      <label for="inputLocation" class="control-label">Location:</label> {{location}}</p>
-                    </div>
-
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default"><a href={{url}}>Go to Profile</a></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
+        <div class="media placeholder NULL {{year}} {{location}}">
+          <div class="col-xs-4 col-sm-2 media-left">
+            <img class="media-object img-responsive" src="/images/{{avatar}}">
           </div>
+
+          <div class="media-body">
+						{{#if @root.view_A}}
+            	<a href={{url}} id="peerLink"><h3 class="media-heading">{{name}}</h3></a>
+						{{else}}
+							<h3 class="media-heading">{{name}}</h3>
+						{{/if}}
+						<span class="text-muted">Looking for <b>{{groupStatus}}</b> more group member(s)</span><br>
+
+            <label for="inputMajor" class="control-label">Major:</label> {{major}} <br>
+            <label for="inputYear" class="control-label">Year:</label> {{year}} <br>
+            <label for="inputLocation" class="control-label">Location:</label> {{location}} <br>
+
+						{{#unless @root.view_A}}
+							<a href={{url}} class="btn btn-primary" id="peerBtn">View Profile</a>
+						{{/unless}}
+        	</div>
         </div>
         {{/each}}
       </div>
-    </div>
 
+    </div>
+    <!-- TODO: right align, add hover back to top thingy -->
+    <a href="#" id="backTopBtn" class="btn btn-primary btn-lg" role="button" title="Return back to the top of the page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
   </div>
 
   <script src="/js/jquery-3.1.1.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/course.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-93044675-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
 </body>
 </html>

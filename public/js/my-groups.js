@@ -1,13 +1,16 @@
-var data;
 $(document).ready(function() {
-  $.get('/data', function(result) {
-    data = result;
-  });
-  initializePage();
+  $('[data-toggle="tooltip"]').tooltip();
+  $.get('/data/', updateLeaveButtons);
 });
 
-function initializePage() {
-  $('#removeMember').click(function() {
-    $('#groupMember').remove();
-  });
+function updateLeaveButtons(result) {
+    var user = result.students[0];
+    for (let groupId in user.groups) {
+      if (user.groups[groupId].length === 0)
+        $('#leaveGroupBtn' + groupId).attr('disabled', true);
+    }
+}
+
+function leaveGroup(courseId) {
+  $.post('/my-groups/', { courseId : courseId }, function() { location.reload(); });
 }

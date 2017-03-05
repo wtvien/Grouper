@@ -1,23 +1,25 @@
+var hbs = require('hbs');
+var nav = require('../views/partials/navigation.hbs');
+hbs.registerPartial('navigation', nav);
+
 var data = require('../data.json');
 
 exports.view = function(req, res) {
   var user = data.students[0];
 
-  var locations = [
-    { loc : "On-campus", selected : user.location === "On-campus" },
-    { loc : "Off-campus", selected : user.location === "Off-campus" }
-  ];
   var days = [];
-  for (let day in user.availability) {
+  for (let day in user.availability)
     days.push({ day : day, from : user.availability[day][0], to : user.availability[day][1] });
-  }
 
   res.render('my-profile', {
-    title : 'My Profile',
+    title : user.name,
     name : user.name,
+    avatar : user.avatar,
     major : user.major,
+    year : user.year,
+    location : user.location,
     days : days,
     bio : user.bio,
-    roles : user.roles
-   });
+    roles : user.roles,
+  });
 };
